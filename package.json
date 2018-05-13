@@ -1,0 +1,52 @@
+{
+    "name": "shortcut-menu-bar",
+    "displayName": "Shortcut Menu Bar",
+    "description": "Shortcut Menu Bar - It adds useful buttons like format,save etc to the editor menu bar in Visual Studio Code.",
+    "version": "0.0.1",
+    "publisher": "jerrygoyal",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Programming Languages","Other"
+    ],
+    "keywords":["shortcut","menu","bar","menu bar","shortcut menu bar","title","title bar","menubar","shortcutbar","buttons"],
+    "activationEvents": [
+        "onCommand:extension.save"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.save",
+                "title": "Save",
+                "category": "menubar",
+                "icon":{
+                    "light": "./src/media/save.svg",
+					"dark": "./src/media/save.svg"
+                }
+            }
+        ],
+        "menus": {
+            "editor/title": [{
+               "when": "resourceIsFile==true",
+                "command": "extension.save",
+                "group": "navigation"
+            }]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
