@@ -12,7 +12,8 @@
     ],
     "keywords":["shortcut","menu","bar","menu bar","shortcut menu bar","title","title bar","menubar","shortcutbar","buttons"],
     "activationEvents": [
-        "onCommand:extension.save"
+        "onCommand:extension.save",
+        "onCommand:extension.beautify"        
     ],
     "main": "./out/extension",
     "contributes": {
@@ -25,14 +26,30 @@
                     "light": "./src/media/save.svg",
 					"dark": "./src/media/save.svg"
                 }
+            },
+            {
+                "command": "extension.beautify",
+                "title": "Beautify",
+                "category": "menubar",
+                "icon":{
+                    "light": "./src/media/save.svg",
+					"dark": "./src/media/save.svg"
+                }
             }
         ],
         "menus": {
-            "editor/title": [{
+            "editor/title": [
+                {
                "when": "resourceIsFile==true",
                 "command": "extension.save",
                 "group": "navigation"
-            }]
+            },
+            {
+                "when": "resourceIsFile==true",
+                 "command": "extension.beautify",
+                 "group": "navigation"
+             }
+        ]
         }
     },
     "scripts": {

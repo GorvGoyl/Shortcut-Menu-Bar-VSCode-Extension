@@ -2,7 +2,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 // import * as vscode from 'vscode';
-import {window, commands, ExtensionContext} from 'vscode';
+import { window, commands, ExtensionContext, TextDocument, TextEditor, TextEditorCursorStyle } from 'vscode';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext) {
@@ -14,11 +14,23 @@ export function activate(context: ExtensionContext) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = commands.registerCommand('extension.save', () => {
-        commands.executeCommand( 'workbench.action.files.save' ).then( function(e)
-            {
-                // window.showErrorMessage('File not saved');
-            } );
+    let disposableSave = commands.registerCommand('extension.save', () => {
+        commands.executeCommand('workbench.action.files.save').then(function (e) {
+            // window.showErrorMessage('File not saved');
+        });
+    });
+    let disposableBeautify = commands.registerCommand('extension.beautify', () => {
+        let editor = window.activeTextEditor;
+        if (!editor) {
+            return; // No open text editor
+        }
+        if (window.state.focused === true && !editor.selection.isEmpty) {
+            commands.executeCommand('editor.action.formatSelection').then(function (e) {
+            });
+        } else {
+            commands.executeCommand('editor.action.formatDocument').then(function (e) {
+            });
+        }
     });
     // async function trySave(doc : TextDocument) : Promise<void> {
     //     if (doc.isUntitled) {
@@ -28,7 +40,10 @@ export function activate(context: ExtensionContext) {
     //         window.showErrorMessage('Please test on an unsaved document');
     //     }
     // }
-    context.subscriptions.push(disposable);
+
+    // Add to a list of disposables which are disposed when this extension is deactivated.
+    context.subscriptions.push(disposableSave);
+    context.subscriptions.push(disposableBeautify);
 }
 
 // this method is called when your extension is deactivated
