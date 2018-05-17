@@ -8,13 +8,25 @@
         "vscode": "^1.22.0"
     },
     "categories": [
-        "Programming Languages","Other"
+        "Programming Languages",
+        "Other"
     ],
-    "keywords":["shortcut","menu","bar","menu bar","shortcut menu bar","title","title bar","menubar","shortcutbar","buttons"],
+    "keywords": [
+        "shortcut",
+        "menu",
+        "bar",
+        "menu bar",
+        "shortcut menu bar",
+        "title",
+        "title bar",
+        "menubar",
+        "shortcutbar",
+        "buttons"
+    ],
     "activationEvents": [
         "onCommand:extension.save",
-        "onCommand:extension.beautify", 
-        "onCommand:extension.filelist"        
+        "onCommand:extension.beautify",
+        "onCommand:extension.filelist"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -23,47 +35,48 @@
                 "command": "extension.save",
                 "title": "Save",
                 "category": "menubar",
-                "icon":{
+                "icon": {
                     "light": "./src/media/save.svg",
-					"dark": "./src/media/save.svg"
+                    "dark": "./src/media/save.svg"
                 }
             },
             {
                 "command": "extension.beautify",
                 "title": "Beautify",
                 "category": "menubar",
-                "icon":{
+                "icon": {
                     "light": "./src/media/save.svg",
-					"dark": "./src/media/save.svg"
+                    "dark": "./src/media/save.svg"
                 }
             },
             {
                 "command": "extension.filelist",
                 "title": "Opened Files",
                 "category": "menubar",
-                "icon":{
+                "icon": {
                     "light": "./src/media/save.svg",
-					"dark": "./src/media/save.svg"
+                    "dark": "./src/media/save.svg"
                 }
             }
         ],
         "menus": {
             "editor/title": [
                 {
-               "when": "isInDiffEditor==false",
-                "command": "extension.save",
-                "group": "navigation"
-            },
-            {
-                "when": "isInDiffEditor==false",
-                 "command": "extension.beautify",
-                 "group": "navigation"
-             },
-             {
-                 "command": "extension.filelist",
-                 "group": "navigation"
-             }
-        ]
+                    "when": "!isInDiffEditor && !markdownPreviewFocus",
+                    "command": "extension.save",
+                    "group": "navigation"
+                },
+                {
+                    "when": "!isInDiffEditor && !markdownPreviewFocus",
+                    "command": "extension.beautify",
+                    "group": "navigation"
+                },
+                {
+                    "when": "!isInDiffEditor && !markdownPreviewFocus",
+                    "command": "extension.filelist",
+                    "group": "navigation"
+                }
+            ]
         }
     },
     "scripts": {
