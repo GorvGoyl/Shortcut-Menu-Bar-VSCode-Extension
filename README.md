@@ -1,20 +1,17 @@
-# Shortcut-Menu-Bar-VSCode-Extension
-Shortcut Menu Bar - It adds useful buttons like format,save etc to the editor menu bar in Visual Studio Code.
+# Shortcut Menu Bar VSCode Extension
+Show buttons like beautify, list files, save etc to the editor menu bar in the Visual Studio Code.
 
-## Features
+## Screenshot
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+![shortcut menu bar](images/intro.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+<!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+<!-- ## Requirements
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
+If you have any requirements or dependencies, add a section describing those and how to install and configure them. -->
+<!-- 
 ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
@@ -24,9 +21,9 @@ For example:
 This extension contributes the following settings:
 
 * `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `myExtension.thing`: set to `blah` to do something -->
 
-## Known Issues
+<!-- ## Known Issues
 
 Calling out known issues can help limit users opening duplicate issues against your extension.
 
@@ -61,4 +58,4 @@ Added features X, Y, and Z.
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy!** -->

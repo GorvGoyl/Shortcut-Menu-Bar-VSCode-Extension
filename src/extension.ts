@@ -4,7 +4,7 @@
 // import * as vscode from 'vscode';
 
 // let fs = require("fs");
-import { window, commands, ExtensionContext  } from 'vscode';
+import { window, commands, ExtensionContext } from 'vscode';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext) {
@@ -14,7 +14,7 @@ export function activate(context: ExtensionContext) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    
+
     let disposableSave = commands.registerCommand('extension.save', () => {
         commands.executeCommand('workbench.action.files.save').then(function () {
             // window.showErrorMessage('File not saved');
