@@ -1,8 +1,8 @@
 {
     "name": "shortcut-menu-bar",
     "displayName": "Shortcut Menu Bar",
-    "description": "Shortcut Menu Bar - It adds useful buttons like format,save etc to the editor menu bar in Visual Studio Code.",
-    "version": "0.1.0",
+    "description": "Show buttons like beautify, list files, save etc to the editor menu bar in the Visual Studio Code.",
+    "version": "0.1.1",
     "publisher": "jerrygoyal",
     "author": {
         "name": "Jerrygoyal"
