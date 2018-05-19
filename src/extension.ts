@@ -16,7 +16,7 @@ export function activate(context: ExtensionContext) {
     // The commandId parameter must match the command field in package.json
     
     let disposableSave = commands.registerCommand('extension.save', () => {
-        commands.executeCommand('workbench.action.files.save').then(function (e) {
+        commands.executeCommand('workbench.action.files.save').then(function () {
             // window.showErrorMessage('File not saved');
         });
     });
@@ -32,10 +32,10 @@ export function activate(context: ExtensionContext) {
         //     let t=9;
         //   }
         if (window.state.focused === true && !editor.selection.isEmpty) {
-            commands.executeCommand('editor.action.formatSelection').then(function (e) {
+            commands.executeCommand('editor.action.formatSelection').then(function () {
             });
         } else {
-            commands.executeCommand('editor.action.formatDocument').then(function (e) {
+            commands.executeCommand('editor.action.formatDocument').then(function () {
             });
         }
     });
@@ -47,19 +47,19 @@ export function activate(context: ExtensionContext) {
         }
         switch (editor.viewColumn) {
             case 1:
-                commands.executeCommand('workbench.action.showEditorsInFirstGroup').then(function (e) {
+                commands.executeCommand('workbench.action.showEditorsInFirstGroup').then(function () {
                 });
                 break;
             case 2:
-                commands.executeCommand('workbench.action.showEditorsInSecondGroup').then(function (e) {
+                commands.executeCommand('workbench.action.showEditorsInSecondGroup').then(function () {
                 });
                 break;
             case 3:
-                commands.executeCommand('workbench.action.showEditorsInThirdGroup').then(function (e) {
+                commands.executeCommand('workbench.action.showEditorsInThirdGroup').then(function () {
                 });
                 break;
             default:
-                commands.executeCommand('workbench.action.showEditorsInGroup').then(function (e) {
+                commands.executeCommand('workbench.action.showEditorsInGroup').then(function () {
                 });
                 break;
         }

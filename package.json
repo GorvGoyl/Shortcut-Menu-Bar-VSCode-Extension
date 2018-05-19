@@ -36,7 +36,7 @@
                 "title": "Save",
                 "category": "menubar",
                 "icon": {
-                    "light": "./src/media/save.svg",
+                    "light": "./src/media/save_light.svg",
                     "dark": "./src/media/save.svg"
                 }
             },
@@ -45,8 +45,8 @@
                 "title": "Beautify",
                 "category": "menubar",
                 "icon": {
-                    "light": "./src/media/save.svg",
-                    "dark": "./src/media/save.svg"
+                    "light": "./src/media/format_light.svg",
+                    "dark": "./src/media/format.svg"
                 }
             },
             {
@@ -54,8 +54,8 @@
                 "title": "Opened Files",
                 "category": "menubar",
                 "icon": {
-                    "light": "./src/media/save.svg",
-                    "dark": "./src/media/save.svg"
+                    "light": "./src/media/list_light.svg",
+                    "dark": "./src/media/list.svg"
                 }
             }
         ],
