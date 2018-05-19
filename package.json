@@ -64,17 +64,17 @@
                 {
                     "when": "!isInDiffEditor && !markdownPreviewFocus",
                     "command": "extension.save",
-                    "group": "navigation"
+                    "group": "navigation@1"
                 },
                 {
                     "when": "!isInDiffEditor && !markdownPreviewFocus",
                     "command": "extension.beautify",
-                    "group": "navigation"
+                    "group": "navigation@2"
                 },
                 {
                     "when": "!isInDiffEditor && !markdownPreviewFocus",
                     "command": "extension.filelist",
-                    "group": "navigation"
+                    "group": "navigation@3"
                 }
             ]
         }
