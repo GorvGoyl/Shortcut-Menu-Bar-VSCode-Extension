@@ -4,7 +4,7 @@
 // import * as vscode from 'vscode';
 
 // let fs = require("fs");
-import { window, commands, ExtensionContext, TextDocument, TextEditor, TextEditorCursorStyle, workspace, Uri, TextEdit, } from 'vscode';
+import { window, commands, ExtensionContext  } from 'vscode';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext) {
