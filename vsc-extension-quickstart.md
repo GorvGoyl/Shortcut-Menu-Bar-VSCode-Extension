@@ -1,4 +1,13 @@
-# Welcome to your VS Code Extension
+# Welcome to VS Code Extension
+
+### setup
+- npm install
+### Publish
+- https://code.visualstudio.com/docs/extensions/publish-extension
+- remove warnings first
+- vsce publish patch
+- package (.vsix): vsce package
+----
 
 ## What's in the folder
 * This folder contains all of the files necessary for your extension.
