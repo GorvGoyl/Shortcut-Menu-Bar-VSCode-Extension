@@ -1,13 +1,20 @@
 # Welcome to VS Code Extension
 
-### setup
+### Setup
 - npm install
-### Publish
+
+### Publishing tools setup
 - https://code.visualstudio.com/docs/extensions/publish-extension
+- npm install -g vsce
+
+### How to Publish
 - remove warnings first
 - vsce publish patch
 - package (.vsix): vsce package
 ----
+
+https://code.visualstudio.com/docs/extensionAPI/vscode-api
+https://code.visualstudio.com/docs/getstarted/keybindings
 
 ## What's in the folder
 * This folder contains all of the files necessary for your extension.
