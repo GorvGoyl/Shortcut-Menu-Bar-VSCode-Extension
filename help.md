@@ -9,7 +9,10 @@
 
 ### How to Publish
 - remove warnings first
-- vsce publish patch
+- update version in package.json next to https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
+- checkin git changes
+- vsce publish 0.1.6
+
 - package (.vsix): vsce package
 ----
 

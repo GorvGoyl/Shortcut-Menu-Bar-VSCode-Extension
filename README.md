@@ -11,7 +11,7 @@ Show buttons like beautify, list files, save etc to the editor menu bar in the V
 ---
 ## Release Notes
 
-### 0.1.3
+### 0.1.5
 
 - Fixed issue to properly show "opened files"
 
