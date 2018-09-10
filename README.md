@@ -6,6 +6,18 @@ Show buttons like beautify, list files, save etc to the editor menu bar in the V
 
 ![shortcut menu bar](images/intro.png)
 
+---
+#### Report Bugs: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues
+---
+## Release Notes
+
+### 0.1.5
+
+- Fixed issue to properly show "opened files"
+
+### 0.1.2
+- Initial Release
+---
 <!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
 
 <!-- ## Requirements
@@ -26,22 +38,6 @@ This extension contributes the following settings:
 <!-- ## Known Issues
 
 Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
 
 -----------------------------------------------------------------------------------------------------------
 

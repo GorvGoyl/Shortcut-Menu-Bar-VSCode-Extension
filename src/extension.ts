@@ -45,24 +45,26 @@ export function activate(context: ExtensionContext) {
         if (!editor || !editor.viewColumn) {
             return; // No open text editor
         }
-        switch (editor.viewColumn) {
-            case 1:
-                commands.executeCommand('workbench.action.showEditorsInFirstGroup').then(function () {
-                });
-                break;
-            case 2:
-                commands.executeCommand('workbench.action.showEditorsInSecondGroup').then(function () {
-                });
-                break;
-            case 3:
-                commands.executeCommand('workbench.action.showEditorsInThirdGroup').then(function () {
-                });
-                break;
-            default:
-                commands.executeCommand('workbench.action.showEditorsInGroup').then(function () {
-                });
-                break;
-        }
+        commands.executeCommand('workbench.action.openPreviousRecentlyUsedEditorInGroup').then(function () {
+        });
+        // switch (editor.viewColumn) {
+        //     case 1:
+        //         commands.executeCommand('workbench.action.showEditorsInFirstGroup').then(function () {
+        //         });
+        //         break;
+        //     case 2:
+        //         commands.executeCommand('workbench.action.showEditorsInSecondGroup').then(function () {
+        //         });
+        //         break;
+        //     case 3:
+        //         commands.executeCommand('workbench.action.showEditorsInThirdGroup').then(function () {
+        //         });
+        //         break;
+        //     default:
+        //         commands.executeCommand('workbench.action.showEditorsInGroup').then(function () {
+        //         });
+        //         break;
+        // }
     });
 
     // Add to a list of disposables which are disposed when this extension is deactivated.
