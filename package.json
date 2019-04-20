@@ -2,7 +2,7 @@
     "name": "shortcut-menu-bar",
     "displayName": "Shortcut Menu Bar",
     "description": "Show buttons like beautify, list files, save etc to the editor menu bar in the Visual Studio Code.",
-    "version": "0.1.5",
+    "version": "1.0.0",
     "publisher": "jerrygoyal",
     "author": {
         "name": "Jerrygoyal"
@@ -34,10 +34,44 @@
     "activationEvents": [
         "onCommand:extension.save",
         "onCommand:extension.beautify",
-        "onCommand:extension.filelist"
+        "onCommand:extension.filelist",
+        "onCommand:extension.toggleTerminal",
+        "onCommand:extension.toggleActivityBar"
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration": [
+            {
+                "title": "Shortcut Menu Bar configuration",
+                "properties": {
+                    "Save active file": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "show icon for save active file"
+                    },
+                    "Beautify active file": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for beautify active file"
+                    },
+                    "Open files list": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for open files list"
+                    },
+                    "Toggle terminal": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for toggle terminal"
+                    },
+                    "Toggle activity bar": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "show icon for toggle activity bar"
+                    }
+                }
+            }
+        ],
         "commands": [
             {
                 "command": "extension.save",
@@ -65,24 +99,52 @@
                     "light": "images/list_light.svg",
                     "dark": "images/list.svg"
                 }
+            },
+            {
+                "command": "extension.toggleTerminal",
+                "title": "Toggle terminal",
+                "category": "menubar",
+                "icon": {
+                    "light": "images/terminal_light.svg",
+                    "dark": "images/terminal.svg"
+                }
+            },
+            {
+                "command": "extension.toggleActivityBar",
+                "title": "Toggle activity bar",
+                "category": "menubar",
+                "icon": {
+                    "light": "images/activitybar_light.svg",
+                    "dark": "images/activitybar.svg"
+                }
             }
         ],
         "menus": {
             "editor/title": [
                 {
-                    "when": "!isInDiffEditor && !markdownPreviewFocus",
+                    "when": "!isInDiffEditor && !markdownPreviewFocus && config.Save active file",
                     "command": "extension.save",
                     "group": "navigation@1"
                 },
                 {
-                    "when": "!isInDiffEditor && !markdownPreviewFocus",
+                    "when": "!isInDiffEditor && !markdownPreviewFocus && config.Beautify active file",
                     "command": "extension.beautify",
                     "group": "navigation@2"
                 },
                 {
-                    "when": "!isInDiffEditor && !markdownPreviewFocus",
+                    "when": "!isInDiffEditor && !markdownPreviewFocus && config.Open files list",
                     "command": "extension.filelist",
                     "group": "navigation@3"
+                },
+                {
+                    "when": "config.Toggle terminal",
+                    "command": "extension.toggleTerminal",
+                    "group": "navigation@4"
+                },
+                {
+                    "when": "config.Toggle activity bar",
+                    "command": "extension.toggleActivityBar",
+                    "group": "navigation@4"
                 }
             ]
         }
@@ -96,9 +158,9 @@
     },
     "devDependencies": {
         "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.69",
-        "tslint": "^5.11.0",
+        "@types/node": "^7.10.5",
+        "tslint": "^5.16.0",
         "typescript": "^2.9.2",
-        "vscode": "^1.1.21"
+        "vscode": "^1.1.33"
     }
 }

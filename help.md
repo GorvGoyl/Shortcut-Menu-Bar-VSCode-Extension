@@ -11,9 +11,12 @@
 - remove warnings first
 - update version in package.json next to https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
 - checkin git changes
-- vsce publish 0.1.6
+- vsce publish
 
 - package (.vsix): vsce package
+
+####2-DO
+- opened files not working when on extension page
 ----
 
 https://code.visualstudio.com/docs/extensionAPI/vscode-api

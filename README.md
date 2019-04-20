@@ -1,15 +1,21 @@
 # Shortcut Menu Bar VSCode Extension
-Show buttons like beautify, list files, save etc to the editor menu bar in the Visual Studio Code.
-
+Show buttons like beautify, list files, save, toggle terminal,activity bar etc to the editor menu bar in the Visual Studio Code.
+User may request additonal buttons by creating a github issue in below link.
 ## Screenshot
 
 
 ![shortcut menu bar](images/intro.png)
+---
+![shortcut menu bar](images/intro_2.png)
 
 ---
-#### Report Bugs: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues
+#### Report Bugs/Suggest Features: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues
 ---
 ## Release Notes
+### 1.0.0
+
+- user can now hide/show icons in settings
+- added toggle terminal, activity bar
 
 ### 0.1.5
 
