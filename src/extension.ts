@@ -3,11 +3,24 @@
 // Import the module and reference it with the alias vscode in your code below
 // import * as vscode from 'vscode';
 
+var init = false;
+var hasCpp = false;
+
 // let fs = require("fs");
 import { window, commands, ExtensionContext, Disposable } from 'vscode';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext) {
+    if (!init) {
+        init = true;
+
+        commands.getCommands().then(function(value) {
+            let result = value.indexOf("C_Cpp.SwitchHeaderSource");
+            if (result >= 0) {
+                hasCpp = true;
+            }
+        });
+    }
 
     console.log('extension is now active!');
 
@@ -59,9 +72,30 @@ export function activate(context: ExtensionContext) {
         });
     });
 
+    let disposableBack = commands.registerCommand('extension.back', () => {
+        commands.executeCommand('workbench.action.navigateBack').then(function () {
+        });
+    });
+
+    let disposableForward = commands.registerCommand('extension.forward', () => {
+        commands.executeCommand('workbench.action.navigateForward').then(function () {
+        });
+    });
+
+    let disposableSwitch = commands.registerCommand('extension.switch', () => {
+        if (hasCpp) {
+            commands.executeCommand('C_Cpp.SwitchHeaderSource').then(function () { });
+        } else {
+            window.showErrorMessage('C/C++ extension (ms-vscode.cpptools) is not installed!');
+        }
+    });
+    
     // Add to a list of disposables which are disposed when this extension is deactivated.
     context.subscriptions.push(disposableFileList);
     context.subscriptions.push(disposableBeautify);
+    context.subscriptions.push(disposableBack);
+    context.subscriptions.push(disposableForward);
+    context.subscriptions.push(disposableSwitch);
     disposableCommandsArray.forEach(i => {
         context.subscriptions.push(i);
     });

@@ -2,7 +2,7 @@
     "name": "shortcut-menu-bar",
     "displayName": "Shortcut Menu Bar",
     "description": "Show buttons like beautify, list files, save etc to the editor menu bar in the Visual Studio Code.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "jerrygoyal",
     "author": {
         "name": "Jerrygoyal"
@@ -32,6 +32,9 @@
         "shortcut menu bar"
     ],
     "activationEvents": [
+        "onCommand:extension.back",
+        "onCommand:extension.forward",
+        "onCommand:extension.switch",
         "onCommand:extension.save",
         "onCommand:extension.beautify",
         "onCommand:extension.filelist",
@@ -48,6 +51,21 @@
                         "type": "boolean",
                         "default": false,
                         "description": "show icon for save active file"
+                    },
+                    "Navigate back": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for nagivate back"
+                    },
+                    "Navigate forward": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for nagivate forward"
+                    },
+                    "Switch header source": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for switch header/source"
                     },
                     "Beautify active file": {
                         "type": "boolean",
@@ -73,6 +91,33 @@
             }
         ],
         "commands": [
+            {
+                "command": "extension.back",
+                "title": "Navigate Back",
+                "category": "menubar",
+                "icon": {
+                    "light": "images/triangle-left_light.svg",
+                    "dark": "images/triangle-left.svg"
+                }
+            },
+            {
+                "command": "extension.forward",
+                "title": "Navigate Forward",
+                "category": "menubar",
+                "icon": {
+                    "light": "images/triangle-right_light.svg",
+                    "dark": "images/triangle-right.svg"
+                }
+            },
+            {
+                "command": "extension.switch",
+                "title": "Switch Header/Source",
+                "category": "menubar",
+                "icon": {
+                    "light": "images/switch_light.svg",
+                    "dark": "images/switch.svg"
+                }
+            },
             {
                 "command": "extension.save",
                 "title": "Save",
@@ -122,29 +167,44 @@
         "menus": {
             "editor/title": [
                 {
+                    "when": "config.Navigate back",
+                    "command": "extension.back",
+                    "group": "navigation@1"
+                },
+                {
+                    "when": "config.Navigate forward",
+                    "command": "extension.forward",
+                    "group": "navigation@2"
+                },
+                {
+                    "when": "editorTextFocus && config.Switch header source",
+                    "command": "extension.switch",
+                    "group": "navigation@3"
+                },
+                {
                     "when": "!isInDiffEditor && !markdownPreviewFocus && config.Save active file",
                     "command": "extension.save",
-                    "group": "navigation@1"
+                    "group": "navigation@4"
                 },
                 {
                     "when": "!isInDiffEditor && !markdownPreviewFocus && config.Beautify active file",
                     "command": "extension.beautify",
-                    "group": "navigation@2"
+                    "group": "navigation@5"
                 },
                 {
                     "when": "!isInDiffEditor && !markdownPreviewFocus && config.Open files list",
                     "command": "extension.filelist",
-                    "group": "navigation@3"
+                    "group": "navigation@6"
                 },
                 {
                     "when": "config.Toggle terminal",
                     "command": "extension.toggleTerminal",
-                    "group": "navigation@4"
+                    "group": "navigation@7"
                 },
                 {
                     "when": "config.Toggle activity bar",
                     "command": "extension.toggleActivityBar",
-                    "group": "navigation@4"
+                    "group": "navigation@8"
                 }
             ]
         }
