@@ -37,6 +37,7 @@
         "onCommand:extension.switch",
         "onCommand:extension.save",
         "onCommand:extension.beautify",
+        "onCommand:extension.toggleWhitespace",
         "onCommand:extension.filelist",
         "onCommand:extension.toggleTerminal",
         "onCommand:extension.toggleActivityBar"
@@ -71,6 +72,11 @@
                         "type": "boolean",
                         "default": true,
                         "description": "show icon for beautify active file"
+                    },
+                    "Toggle render whitespace": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for toggle render whitespace"
                     },
                     "Open files list": {
                         "type": "boolean",
@@ -137,6 +143,15 @@
                 }
             },
             {
+                "command": "extension.toggleWhitespace",
+                "title": "Toggle Render Whitespace",
+                "category": "menubar",
+                "icon": {
+                    "light": "images/whitespace_light.svg",
+                    "dark": "images/whitespace.svg"
+                }
+            },
+            {
                 "command": "extension.filelist",
                 "title": "Opened Files",
                 "category": "menubar",
@@ -192,19 +207,24 @@
                     "group": "navigation@5"
                 },
                 {
+                    "when": "config.Toggle render whitespace",
+                    "command": "extension.toggleWhitespace",
+                    "group": "navigation@6"
+                },
+                {
                     "when": "!isInDiffEditor && !markdownPreviewFocus && config.Open files list",
                     "command": "extension.filelist",
-                    "group": "navigation@6"
+                    "group": "navigation@7"
                 },
                 {
                     "when": "config.Toggle terminal",
                     "command": "extension.toggleTerminal",
-                    "group": "navigation@7"
+                    "group": "navigation@8"
                 },
                 {
                     "when": "config.Toggle activity bar",
                     "command": "extension.toggleActivityBar",
-                    "group": "navigation@8"
+                    "group": "navigation@9"
                 }
             ]
         }

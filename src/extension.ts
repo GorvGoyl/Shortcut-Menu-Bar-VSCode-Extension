@@ -28,7 +28,10 @@ export function activate(context: ExtensionContext) {
         //name in package.json , name of command to execute
         ["extension.save", "workbench.action.files.save"],
         ["extension.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
-        ["extension.toggleActivityBar", "workbench.action.toggleActivityBarVisibility"]
+        ["extension.toggleActivityBar", "workbench.action.toggleActivityBarVisibility"],
+        ["extension.back", "workbench.action.navigateBack"],
+        ["extension.forward", "workbench.action.navigateForward"],
+        ["extension.toggleWhitespace", "editor.action.toggleRenderWhitespace"]
     ];
 
     let disposableCommandsArray: Disposable[] = [];
@@ -72,16 +75,6 @@ export function activate(context: ExtensionContext) {
         });
     });
 
-    let disposableBack = commands.registerCommand('extension.back', () => {
-        commands.executeCommand('workbench.action.navigateBack').then(function () {
-        });
-    });
-
-    let disposableForward = commands.registerCommand('extension.forward', () => {
-        commands.executeCommand('workbench.action.navigateForward').then(function () {
-        });
-    });
-
     let disposableSwitch = commands.registerCommand('extension.switch', () => {
         if (hasCpp) {
             commands.executeCommand('C_Cpp.SwitchHeaderSource').then(function () { });
@@ -93,8 +86,6 @@ export function activate(context: ExtensionContext) {
     // Add to a list of disposables which are disposed when this extension is deactivated.
     context.subscriptions.push(disposableFileList);
     context.subscriptions.push(disposableBeautify);
-    context.subscriptions.push(disposableBack);
-    context.subscriptions.push(disposableForward);
     context.subscriptions.push(disposableSwitch);
     disposableCommandsArray.forEach(i => {
         context.subscriptions.push(i);

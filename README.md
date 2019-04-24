@@ -16,6 +16,7 @@ User may request additonal buttons by creating a github issue in below link.
 
 - added navigate back and forward buttons
 - added switch header and source file button
+- added toggle render whitespace button
 
 ### 1.0.0
 
