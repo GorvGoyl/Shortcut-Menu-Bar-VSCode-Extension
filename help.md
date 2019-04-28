@@ -13,7 +13,7 @@
 - checkin git changes
 - vsce publish
 
-- package (.vsix): vsce package
+<!-- - package (.vsix): vsce package -->
 
 ####2-DO
 - opened files not working when on extension page
