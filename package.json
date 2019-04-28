@@ -65,7 +65,7 @@
                     },
                     "Switch header source": {
                         "type": "boolean",
-                        "default": true,
+                        "default": false,
                         "description": "show icon for switch header/source"
                     },
                     "Beautify active file": {
@@ -75,7 +75,7 @@
                     },
                     "Toggle render whitespace": {
                         "type": "boolean",
-                        "default": true,
+                        "default": false,
                         "description": "show icon for toggle render whitespace"
                     },
                     "Open files list": {
