@@ -12,6 +12,12 @@ User may request additonal buttons by creating a github issue in below link.
 #### Report Bugs/Suggest Features: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues
 ---
 ## Release Notes
+### 1.0.1
+
+- added navigate back and forward buttons
+- added switch header and source file button
+- added toggle render whitespace button
+
 ### 1.0.0
 
 - user can now hide/show icons in settings

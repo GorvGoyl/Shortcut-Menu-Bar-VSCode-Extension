@@ -3,11 +3,24 @@
 // Import the module and reference it with the alias vscode in your code below
 // import * as vscode from 'vscode';
 
+var init = false;
+var hasCpp = false;
+
 // let fs = require("fs");
 import { window, commands, ExtensionContext, Disposable } from 'vscode';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext) {
+    if (!init) {
+        init = true;
+
+        commands.getCommands().then(function(value) {
+            let result = value.indexOf("C_Cpp.SwitchHeaderSource");
+            if (result >= 0) {
+                hasCpp = true;
+            }
+        });
+    }
 
     console.log('extension is now active!');
 
@@ -15,7 +28,10 @@ export function activate(context: ExtensionContext) {
         //name in package.json , name of command to execute
         ["extension.save", "workbench.action.files.save"],
         ["extension.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
-        ["extension.toggleActivityBar", "workbench.action.toggleActivityBarVisibility"]
+        ["extension.toggleActivityBar", "workbench.action.toggleActivityBarVisibility"],
+        ["extension.back", "workbench.action.navigateBack"],
+        ["extension.forward", "workbench.action.navigateForward"],
+        ["extension.toggleWhitespace", "editor.action.toggleRenderWhitespace"]
     ];
 
     let disposableCommandsArray: Disposable[] = [];
@@ -59,9 +75,18 @@ export function activate(context: ExtensionContext) {
         });
     });
 
+    let disposableSwitch = commands.registerCommand('extension.switch', () => {
+        if (hasCpp) {
+            commands.executeCommand('C_Cpp.SwitchHeaderSource').then(function () { });
+        } else {
+            window.showErrorMessage('C/C++ extension (ms-vscode.cpptools) is not installed!');
+        }
+    });
+    
     // Add to a list of disposables which are disposed when this extension is deactivated.
     context.subscriptions.push(disposableFileList);
     context.subscriptions.push(disposableBeautify);
+    context.subscriptions.push(disposableSwitch);
     disposableCommandsArray.forEach(i => {
         context.subscriptions.push(i);
     });
