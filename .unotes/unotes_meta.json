@@ -1,0 +1,29 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "images": {
+      "name": "images",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "out": {
+      "name": "out",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "CHANGELOG": 0,
+    "help": 1,
+    "README": 2
+  }
+}

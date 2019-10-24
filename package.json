@@ -1,267 +1,287 @@
 {
-    "name": "shortcut-menu-bar",
-    "displayName": "Shortcut Menu Bar",
-    "description": "Show buttons like beautify, list files, save etc to the editor menu bar in the Visual Studio Code.",
-    "version": "1.1.0",
-    "publisher": "jerrygoyal",
-    "author": {
-        "name": "Jerrygoyal"
-    },
-    "engines": {
-        "vscode": "^1.22.0"
-    },
-    "icon": "images/menubar.png",
-    "bugs": {
-        "url": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues",
-        "email": "1gouravgg@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension.git"
-    },
-    "homepage": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension",
-    "categories": [
-        "Programming Languages",
-        "Other"
-    ],
-    "keywords": [
-        "shortcut",
-        "menu",
-        "bar",
-        "menubar",
-        "shortcut menu bar",
-        "button"
-    ],
-    "activationEvents": [
-        "onCommand:extension.back",
-        "onCommand:extension.forward",
-        "onCommand:extension.switch",
-        "onCommand:extension.save",
-        "onCommand:extension.beautify",
-        "onCommand:extension.toggleWhitespace",
-        "onCommand:extension.filelist",
-        "onCommand:extension.toggleTerminal",
-        "onCommand:extension.toggleActivityBar",
-        "onCommand:extension.quickOpen"
-    ],
-    "main": "./out/extension",
-    "contributes": {
-        "configuration": [
-            {
-                "title": "Shortcut Menu Bar configuration",
-                "properties": {
-                    "Save active file": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "show icon for save active file"
-                    },
-                    "Navigate back": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for nagivate back"
-                    },
-                    "Navigate forward": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for nagivate forward"
-                    },
-                    "Switch header source": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "show icon for switch header/source"
-                    },
-                    "Beautify active file": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for beautify active file"
-                    },
-                    "Toggle render whitespace": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "show icon for toggle render whitespace"
-                    },
-                    "Open files list": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for open files list"
-                    },
-                    "Toggle terminal": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for toggle terminal"
-                    },
-                    "Toggle activity bar": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "show icon for toggle activity bar"
-                    },
-                    "Quick open": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "show icon for Go to File, Quick Open"
-                    }
-                }
-            }
-        ],
-        "commands": [
-            {
-                "command": "extension.back",
-                "title": "Navigate Back",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/triangle-left_light.svg",
-                    "dark": "images/triangle-left.svg"
-                }
-            },
-            {
-                "command": "extension.forward",
-                "title": "Navigate Forward",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/triangle-right_light.svg",
-                    "dark": "images/triangle-right.svg"
-                }
-            },
-            {
-                "command": "extension.switch",
-                "title": "Switch Header/Source",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/switch_light.svg",
-                    "dark": "images/switch.svg"
-                }
-            },
-            {
-                "command": "extension.save",
-                "title": "Save",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/save_light.svg",
-                    "dark": "images/save.svg"
-                }
-            },
-            {
-                "command": "extension.beautify",
-                "title": "Beautify",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/format_light.svg",
-                    "dark": "images/format.svg"
-                }
-            },
-            {
-                "command": "extension.toggleWhitespace",
-                "title": "Toggle Render Whitespace",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/whitespace_light.svg",
-                    "dark": "images/whitespace.svg"
-                }
-            },
-            {
-                "command": "extension.filelist",
-                "title": "Opened Files",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/list_light.svg",
-                    "dark": "images/list.svg"
-                }
-            },
-            {
-                "command": "extension.toggleTerminal",
-                "title": "Toggle terminal",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/terminal_light.svg",
-                    "dark": "images/terminal.svg"
-                }
-            },
-            {
-                "command": "extension.toggleActivityBar",
-                "title": "Toggle activity bar",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/activitybar_light.svg",
-                    "dark": "images/activitybar.svg"
-                }
-            },
-            {
-                "command": "extension.quickOpen",
-                "title": "Quick open",
-                "category": "menubar",
-                "icon": {
-                    "light": "images/file-search_light.svg",
-                    "dark": "images/file-search.svg"
-                }
-            }
-        ],
-        "menus": {
-            "editor/title": [
-                {
-                    "when": "config.Navigate back",
-                    "command": "extension.back",
-                    "group": "navigation@1"
-                },
-                {
-                    "when": "config.Navigate forward",
-                    "command": "extension.forward",
-                    "group": "navigation@2"
-                },
-                {
-                    "when": "editorTextFocus && config.Switch header source",
-                    "command": "extension.switch",
-                    "group": "navigation@3"
-                },
-                {
-                    "when": "!isInDiffEditor && !markdownPreviewFocus && config.Save active file",
-                    "command": "extension.save",
-                    "group": "navigation@4"
-                },
-                {
-                    "when": "!isInDiffEditor && !markdownPreviewFocus && config.Beautify active file",
-                    "command": "extension.beautify",
-                    "group": "navigation@5"
-                },
-                {
-                    "when": "config.Toggle render whitespace",
-                    "command": "extension.toggleWhitespace",
-                    "group": "navigation@6"
-                },
-                {
-                    "when": "!isInDiffEditor && !markdownPreviewFocus && config.Open files list",
-                    "command": "extension.filelist",
-                    "group": "navigation@7"
-                },
-                {
-                    "when": "config.Toggle terminal",
-                    "command": "extension.toggleTerminal",
-                    "group": "navigation@8"
-                },
-                {
-                    "when": "config.Toggle activity bar",
-                    "command": "extension.toggleActivityBar",
-                    "group": "navigation@9"
-                },
-                {
-                    "when": "config.Quick open",
-                    "command": "extension.quickOpen",
-                    "group": "navigation@10"
-                }
-            ]
+  "name": "shortcut-menu-bar",
+  "displayName": "Shortcut Menu Bar",
+  "description": "Add buttons like beautify,list files,save etc to the editor menu bar in the Visual Studio Code.",
+  "version": "1.2.0",
+  "publisher": "jerrygoyal",
+  "author": {
+    "name": "Jerrygoyal"
+  },
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "icon": "images/menubar.png",
+  "bugs": {
+    "url": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues",
+    "email": "1gouravgg@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension.git"
+  },
+  "homepage": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension",
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "shortcut",
+    "menu",
+    "bar",
+    "menubar",
+    "shortcut menu bar",
+    "button"
+  ],
+  "activationEvents": [
+    "onCommand:extension.back",
+    "onCommand:extension.forward",
+    "onCommand:extension.switch",
+    "onCommand:extension.save",
+    "onCommand:extension.beautify",
+    "onCommand:extension.toggleWhitespace",
+    "onCommand:extension.filelist",
+    "onCommand:extension.toggleTerminal",
+    "onCommand:extension.toggleActivityBar",
+    "onCommand:extension.quickOpen",
+    "onCommand:extension.findReplace"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "Shortcut Menu Bar configuration",
+        "properties": {
+          "Save active file": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for save active file"
+          },
+          "Navigate back": {
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for nagivate back"
+          },
+          "Navigate forward": {
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for nagivate forward"
+          },
+          "Switch header source": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for switch header/source"
+          },
+          "Beautify active file": {
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for beautify active file"
+          },
+          "Toggle render whitespace": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for toggle render whitespace"
+          },
+          "Open files list": {
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for open files list"
+          },
+          "Toggle terminal": {
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for toggle terminal"
+          },
+          "Toggle activity bar": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for toggle activity bar"
+          },
+          "Quick open": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for Go to File, Quick Open"
+          },
+          "Find replace": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for Find/Replace in active file"
+          }
         }
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.10.5",
-        "tslint": "^5.16.0",
-        "typescript": "^2.9.2",
-        "vscode": "^1.1.33"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.back",
+        "title": "Navigate Back",
+        "category": "menubar",
+        "icon": {
+          "light": "images/triangle-left_light.svg",
+          "dark": "images/triangle-left.svg"
+        }
+      },
+      {
+        "command": "extension.forward",
+        "title": "Navigate Forward",
+        "category": "menubar",
+        "icon": {
+          "light": "images/triangle-right_light.svg",
+          "dark": "images/triangle-right.svg"
+        }
+      },
+      {
+        "command": "extension.switch",
+        "title": "Switch Header/Source",
+        "category": "menubar",
+        "icon": {
+          "light": "images/switch_light.svg",
+          "dark": "images/switch.svg"
+        }
+      },
+      {
+        "command": "extension.save",
+        "title": "Save",
+        "category": "menubar",
+        "icon": {
+          "light": "images/save_light.svg",
+          "dark": "images/save.svg"
+        }
+      },
+      {
+        "command": "extension.beautify",
+        "title": "Beautify",
+        "category": "menubar",
+        "icon": {
+          "light": "images/format_light.svg",
+          "dark": "images/format.svg"
+        }
+      },
+      {
+        "command": "extension.toggleWhitespace",
+        "title": "Toggle Render Whitespace",
+        "category": "menubar",
+        "icon": {
+          "light": "images/whitespace_light.svg",
+          "dark": "images/whitespace.svg"
+        }
+      },
+      {
+        "command": "extension.filelist",
+        "title": "Opened Files",
+        "category": "menubar",
+        "icon": {
+          "light": "images/list_light.svg",
+          "dark": "images/list.svg"
+        }
+      },
+      {
+        "command": "extension.toggleTerminal",
+        "title": "Toggle terminal",
+        "category": "menubar",
+        "icon": {
+          "light": "images/terminal_light.svg",
+          "dark": "images/terminal.svg"
+        }
+      },
+      {
+        "command": "extension.toggleActivityBar",
+        "title": "Toggle activity bar",
+        "category": "menubar",
+        "icon": {
+          "light": "images/activitybar_light.svg",
+          "dark": "images/activitybar.svg"
+        }
+      },
+      {
+        "command": "extension.quickOpen",
+        "title": "Quick open",
+        "category": "menubar",
+        "icon": {
+          "light": "images/files-search_light.svg",
+          "dark": "images/files-search.svg"
+        }
+      },
+      {
+        "command": "extension.findReplace",
+        "title": "Find Replace",
+        "category": "menubar",
+        "icon": {
+          "light": "images/find_light.svg",
+          "dark": "images/find.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "config.Navigate back",
+          "command": "extension.back",
+          "group": "navigation@1"
+        },
+        {
+          "when": "config.Navigate forward",
+          "command": "extension.forward",
+          "group": "navigation@2"
+        },
+        {
+          "when": "editorTextFocus && config.Switch header source",
+          "command": "extension.switch",
+          "group": "navigation@3"
+        },
+        {
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.Save active file",
+          "command": "extension.save",
+          "group": "navigation@4"
+        },
+        {
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.Beautify active file",
+          "command": "extension.beautify",
+          "group": "navigation@5"
+        },
+        {
+          "when": "config.Toggle render whitespace",
+          "command": "extension.toggleWhitespace",
+          "group": "navigation@6"
+        },
+        {
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.Open files list",
+          "command": "extension.filelist",
+          "group": "navigation@7"
+        },
+        {
+          "when": "config.Toggle terminal",
+          "command": "extension.toggleTerminal",
+          "group": "navigation@8"
+        },
+        {
+          "when": "config.Toggle activity bar",
+          "command": "extension.toggleActivityBar",
+          "group": "navigation@9"
+        },
+        {
+          "when": "config.Quick open",
+          "command": "extension.quickOpen",
+          "group": "navigation@10"
+        },
+        {
+          "when": "config.Find replace",
+          "command": "extension.findReplace",
+          "group": "navigation@11"
+        }
+      ]
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.10.5",
+    "tslint": "^5.16.0",
+    "typescript": "^2.9.2",
+    "vscode": "^1.1.33"
+  }
 }

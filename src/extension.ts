@@ -24,17 +24,21 @@ export function activate(context: ExtensionContext) {
 
     console.log('extension is now active!');
 
+    // 1) Add simple commands to array -----------------------------------------------------------
     let commandArray = [
-        //name in package.json , name of command to execute
+        //["name in package.json" , "name of command to execute"]
         ["extension.save", "workbench.action.files.save"],
         ["extension.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
         ["extension.toggleActivityBar", "workbench.action.toggleActivityBarVisibility"],
         ["extension.back", "workbench.action.navigateBack"],
         ["extension.forward", "workbench.action.navigateForward"],
-        ["extension.toggleWhitespace", "editor.action.toggleRenderWhitespace"]
+        ["extension.toggleWhitespace", "editor.action.toggleRenderWhitespace"],
+        // ctrl+P behaviour
+        ["extension.quickOpen", "workbench.action.quickOpen"],
+        // ctrl+H behaviour
+        ["extension.findReplace", "editor.action.startFindReplaceAction"]
     ];
-    // => --> // @# || Il O0
-    // let ccc = "O0 lI @ # => --> // @# || Il O0";
+
     let disposableCommandsArray: Disposable[] = [];
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
@@ -48,16 +52,15 @@ export function activate(context: ExtensionContext) {
         }));
     });
 
+    // 2) or Add complex commands separately ----------------------------------------------------
+
     let disposableBeautify = commands.registerCommand('extension.beautify', () => {
 
         let editor = window.activeTextEditor;
         if (!editor) {
             return; // No open text editor
         }
-        // if ((fs.statSync(editor.document.uri.fsPath).mode & 146) === 0) {
-        //     // document is in read-only mode
-        //     let t=9;
-        //   }
+
         if (window.state.focused === true && !editor.selection.isEmpty) {
             commands.executeCommand('editor.action.formatSelection').then(function () {
             });
@@ -77,16 +80,6 @@ export function activate(context: ExtensionContext) {
         });
     });
 
-    // ctrl+P.. quick open files
-    let disposableQuickOpen = commands.registerCommand('extension.quickOpen', () => {
-        let editor = window.activeTextEditor;
-        if (!editor || !editor.viewColumn) {
-            return; // No open text editor
-        }
-        commands.executeCommand('workbench.action.quickOpen').then(function () {
-        });
-    });
-
     let disposableSwitch = commands.registerCommand('extension.switch', () => {
         if (hasCpp) {
             commands.executeCommand('C_Cpp.SwitchHeaderSource').then(function () { });
@@ -95,9 +88,8 @@ export function activate(context: ExtensionContext) {
         }
     });
 
-    // Add to a list of disposables which are disposed when this extension is deactivated.
+    // Add 1) & 2) to a list of disposables which are disposed when this extension is deactivated.----------------------
     context.subscriptions.push(disposableFileList);
-    context.subscriptions.push(disposableQuickOpen);
     context.subscriptions.push(disposableBeautify);
     context.subscriptions.push(disposableSwitch);
     disposableCommandsArray.forEach(i => {
