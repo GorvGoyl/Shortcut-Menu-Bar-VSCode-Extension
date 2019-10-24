@@ -29,7 +29,8 @@
         "menu",
         "bar",
         "menubar",
-        "shortcut menu bar"
+        "shortcut menu bar",
+        "button"
     ],
     "activationEvents": [
         "onCommand:extension.back",
@@ -40,7 +41,8 @@
         "onCommand:extension.toggleWhitespace",
         "onCommand:extension.filelist",
         "onCommand:extension.toggleTerminal",
-        "onCommand:extension.toggleActivityBar"
+        "onCommand:extension.toggleActivityBar",
+        "onCommand:extension.quickOpen"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -92,6 +94,11 @@
                         "type": "boolean",
                         "default": false,
                         "description": "show icon for toggle activity bar"
+                    },
+                    "Quick open": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "show icon for Go to File, Quick Open"
                     }
                 }
             }
@@ -177,6 +184,15 @@
                     "light": "images/activitybar_light.svg",
                     "dark": "images/activitybar.svg"
                 }
+            },
+            {
+                "command": "extension.quickOpen",
+                "title": "Quick open",
+                "category": "menubar",
+                "icon": {
+                    "light": "images/file-search_light.svg",
+                    "dark": "images/file-search.svg"
+                }
             }
         ],
         "menus": {
@@ -225,6 +241,11 @@
                     "when": "config.Toggle activity bar",
                     "command": "extension.toggleActivityBar",
                     "group": "navigation@9"
+                },
+                {
+                    "when": "config.Quick open",
+                    "command": "extension.quickOpen",
+                    "group": "navigation@10"
                 }
             ]
         }

@@ -14,7 +14,7 @@ export function activate(context: ExtensionContext) {
     if (!init) {
         init = true;
 
-        commands.getCommands().then(function(value) {
+        commands.getCommands().then(function (value) {
             let result = value.indexOf("C_Cpp.SwitchHeaderSource");
             if (result >= 0) {
                 hasCpp = true;
@@ -33,7 +33,8 @@ export function activate(context: ExtensionContext) {
         ["extension.forward", "workbench.action.navigateForward"],
         ["extension.toggleWhitespace", "editor.action.toggleRenderWhitespace"]
     ];
-
+    // => --> // @# || Il O0
+    // let ccc = "O0 lI @ # => --> // @# || Il O0";
     let disposableCommandsArray: Disposable[] = [];
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
@@ -66,12 +67,23 @@ export function activate(context: ExtensionContext) {
         }
     });
 
+    // see opened files list
     let disposableFileList = commands.registerCommand('extension.filelist', () => {
         let editor = window.activeTextEditor;
         if (!editor || !editor.viewColumn) {
             return; // No open text editor
         }
         commands.executeCommand('workbench.action.openPreviousRecentlyUsedEditorInGroup').then(function () {
+        });
+    });
+
+    // ctrl+P.. quick open files
+    let disposableQuickOpen = commands.registerCommand('extension.quickOpen', () => {
+        let editor = window.activeTextEditor;
+        if (!editor || !editor.viewColumn) {
+            return; // No open text editor
+        }
+        commands.executeCommand('workbench.action.quickOpen').then(function () {
         });
     });
 
@@ -82,9 +94,10 @@ export function activate(context: ExtensionContext) {
             window.showErrorMessage('C/C++ extension (ms-vscode.cpptools) is not installed!');
         }
     });
-    
+
     // Add to a list of disposables which are disposed when this extension is deactivated.
     context.subscriptions.push(disposableFileList);
+    context.subscriptions.push(disposableQuickOpen);
     context.subscriptions.push(disposableBeautify);
     context.subscriptions.push(disposableSwitch);
     disposableCommandsArray.forEach(i => {
