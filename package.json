@@ -2,7 +2,7 @@
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
   "description": "Add buttons like beautify,list files,save etc to the editor menu bar in the Visual Studio Code.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Jerrygoyal"
@@ -43,7 +43,9 @@
     "onCommand:extension.toggleTerminal",
     "onCommand:extension.toggleActivityBar",
     "onCommand:extension.quickOpen",
-    "onCommand:extension.findReplace"
+    "onCommand:extension.findReplace",
+    "onCommand:extension.lineComment",
+    "onCommand:extension.blockComment"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -105,6 +107,16 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for Find/Replace in active file"
+          },
+          "Toggle line comment": {
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for toggle line comment"
+          },
+          "Toggle block comment": {
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for toggle block comment"
           }
         }
       }
@@ -208,6 +220,24 @@
           "light": "images/find_light.svg",
           "dark": "images/find.svg"
         }
+      },
+      {
+        "command": "extension.lineComment",
+        "title": "Toggle Line Comment",
+        "category": "menubar",
+        "icon": {
+          "light": "images/commentL_light.svg",
+          "dark": "images/commentL.svg"
+        }
+      },
+      {
+        "command": "extension.blockComment",
+        "title": "Toggle Block Comment",
+        "category": "menubar",
+        "icon": {
+          "light": "images/commentB_light.svg",
+          "dark": "images/commentB.svg"
+        }
       }
     ],
     "menus": {
@@ -266,6 +296,16 @@
           "when": "config.Find replace",
           "command": "extension.findReplace",
           "group": "navigation@11"
+        },
+        {
+          "when": "config.Toggle line comment",
+          "command": "extension.lineComment",
+          "group": "navigation@12"
+        },
+        {
+          "when": "config.Toggle block comment",
+          "command": "extension.blockComment",
+          "group": "navigation@13"
         }
       ]
     }

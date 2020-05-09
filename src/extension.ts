@@ -36,7 +36,11 @@ export function activate(context: ExtensionContext) {
         // ctrl+P behaviour
         ["extension.quickOpen", "workbench.action.quickOpen"],
         // ctrl+H behaviour
-        ["extension.findReplace", "editor.action.startFindReplaceAction"]
+		["extension.findReplace", "editor.action.startFindReplaceAction"],
+		// ctrl+/ behaviour
+		["extension.lineComment", "editor.action.commentLine"],
+		// ctrl+shift+a behaviour
+		["extension.blockComment", "editor.action.blockComment"]
     ];
 
     let disposableCommandsArray: Disposable[] = [];

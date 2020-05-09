@@ -27,6 +27,8 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 * Quick open (Ctrl+P)
 * Find & replace in active file (Ctrl+H)
 * Switch header source (for .cpp files)
+* Toggle Line Comment
+* Toggle Block Comment
 
 ##### Liked the extension? Rate it ⭐⭐⭐⭐⭐
 
@@ -59,6 +61,11 @@ By going to extension settings. see above screenshot.
 - - -
 
 ## Release Notes
+
+### 1.2.1
+
+* added toggle line comment button Ctrl+/
+* added toggle block comment button Shift+Alt+A 
 
 ### 1.2
 
