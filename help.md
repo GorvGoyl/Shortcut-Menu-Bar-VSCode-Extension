@@ -37,9 +37,9 @@ https://code.visualstudio.com/api/references/extension-manifest
 
 <!-- - package (.vsix): vsce package -->
 
-#### 2-DO
+#### TODO
 
-- opened files not working when on extension page
+- add button to format docuement with... (editor.action.formatDocument.multiple + editor.action.formatSelection.multiple)
 
 #### Run tests
 
