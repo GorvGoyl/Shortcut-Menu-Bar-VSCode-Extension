@@ -46,7 +46,8 @@
     "onCommand:extension.findReplace",
     "onCommand:extension.undo",
     "onCommand:extension.redo",
-    "onCommand:extension.commentLine"
+    "onCommand:extension.commentLine",
+    "onCommand:extension.saveAll"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -57,72 +58,77 @@
           "Save active file": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for save active file"
+            "description": "show icon for 'save active file'"
           },
           "Navigate back": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for nagivate back"
+            "description": "show icon for 'nagivate back'"
           },
           "Navigate forward": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for nagivate forward"
+            "description": "show icon for 'nagivate forward'"
           },
           "Switch header source": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for switch header/source"
+            "description": "show icon for 'switch header/source'"
           },
           "Beautify active file": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for beautify active file"
+            "description": "show icon for 'beautify/format active file'"
           },
           "Toggle render whitespace": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for toggle render whitespace"
+            "description": "show icon for 'toggle render whitespace'"
           },
           "Open files list": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for open files list"
+            "description": "show icon for 'open files list'"
           },
           "Toggle terminal": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for toggle terminal"
+            "description": "show icon for 'toggle terminal'"
           },
           "Toggle activity bar": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for toggle activity bar"
+            "description": "show icon for 'toggle activity bar'"
           },
           "Quick open": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for Go to File, Quick Open"
+            "description": "show icon for Go to File, 'Quick Open'"
           },
           "Find replace": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for Find/Replace in active file"
+            "description": "show icon for 'Find/Replace in active file'"
           },
           "Undo": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for undo"
+            "description": "show icon for 'undo'"
           },
           "Redo": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for redo"
+            "description": "show icon for 'redo'"
           },
           "Toggle line comment": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for toggle line comment"
+            "description": "show icon for 'toggle line comment'"
+          },
+          "Save all": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'save all'"
           }
         }
       }
@@ -253,6 +259,15 @@
           "light": "images/commentLine_light.svg",
           "dark": "images/commentLine.svg"
         }
+      },
+      {
+        "command": "extension.saveAll",
+        "title": "Save all",
+        "category": "menubar",
+        "icon": {
+          "light": "images/saveAll_light.svg",
+          "dark": "images/saveAll.svg"
+        }
       }
     ],
     "menus": {
@@ -326,6 +341,11 @@
           "when": "editorTextFocus && !editorReadonly && config.Toggle line comment",
           "command": "extension.commentLine",
           "group": "navigation@14"
+        },
+        {
+          "when": "config.Save all",
+          "command": "extension.saveAll",
+          "group": "navigation@15"
         }
       ]
     }

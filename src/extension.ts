@@ -42,6 +42,7 @@ export function activate(context: ExtensionContext) {
     ["extension.undo", "undo"],
     ["extension.redo", "redo"],
     ["extension.commentLine", "editor.action.commentLine"],
+    ["extension.saveAll", "workbench.action.files.saveAll"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];

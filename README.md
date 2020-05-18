@@ -22,14 +22,15 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 - Navigate back
 - Navigate forward
 - Beautify/format code active file
-- show/hide render whitespace
+- Undo/Redo buttons
 - Open files list
+- Save all
 - show/hide terminal
-- show/hide activity bar
+- show/hide render whitespace
 - Quick open (Ctrl+P)
+- show/hide activity bar
 - Find & replace in active file (Ctrl+H)
 - Switch header source (for .cpp files)
-- Undo/Redo buttons
 - Toggle line comment
 
 ##### Liked the extension? Rate it ⭐⭐⭐⭐⭐
@@ -70,6 +71,7 @@ Report Bugs/Suggest Features: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VS
 - fixed bug for 'opened files' button
 - added undo/redo buttons
 - added Toggle line comment button
+- added save all button
 
 ### 1.2
 
