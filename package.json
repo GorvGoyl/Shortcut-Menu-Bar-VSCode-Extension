@@ -43,7 +43,9 @@
     "onCommand:extension.toggleTerminal",
     "onCommand:extension.toggleActivityBar",
     "onCommand:extension.quickOpen",
-    "onCommand:extension.findReplace"
+    "onCommand:extension.findReplace",
+    "onCommand:extension.undo",
+    "onCommand:extension.redo"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -105,6 +107,16 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for Find/Replace in active file"
+          },
+          "Undo": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for undo"
+          },
+          "Redo": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for redo"
           }
         }
       }
@@ -208,6 +220,24 @@
           "light": "images/find_light.svg",
           "dark": "images/find.svg"
         }
+      },
+      {
+        "command": "extension.undo",
+        "title": "Undo",
+        "category": "menubar",
+        "icon": {
+          "light": "images/undo_light.svg",
+          "dark": "images/undo.svg"
+        }
+      },
+      {
+        "command": "extension.redo",
+        "title": "Redo",
+        "category": "menubar",
+        "icon": {
+          "light": "images/redo_light.svg",
+          "dark": "images/redo.svg"
+        }
       }
     ],
     "menus": {
@@ -266,6 +296,16 @@
           "when": "config.Find replace",
           "command": "extension.findReplace",
           "group": "navigation@11"
+        },
+        {
+          "when": "textInputFocus && !editorReadonly && config.Undo",
+          "command": "extension.undo",
+          "group": "navigation@12"
+        },
+        {
+          "when": "textInputFocus && !editorReadonly && config.Redo",
+          "command": "extension.redo",
+          "group": "navigation@13"
         }
       ]
     }

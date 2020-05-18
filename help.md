@@ -13,6 +13,15 @@
 - You can relaunch the extension from the debug toolbar after changing code in `src/extension.ts`.
 - You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes.
 
+### Adding new buttons
+
+- add command to extension.ts
+- in package.json:
+  - add to activationEvents
+  - add to contributes/configuration (set 'default' to false)
+  - add to contributes/commands (add both icons dark #C5C5C5 and light #424242, you can get svg icons from flaticon.com)
+  - add to menus/editor/title
+
 ### Explore the API
 
 https://code.visualstudio.com/docs/getstarted/keybindings

@@ -29,6 +29,7 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 - Quick open (Ctrl+P)
 - Find & replace in active file (Ctrl+H)
 - Switch header source (for .cpp files)
+- Undo/Redo buttons
 
 ##### Liked the extension? Rate it ⭐⭐⭐⭐⭐
 
@@ -39,15 +40,16 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 ### FAQ 🙋‍
 
 **Why Can't I add my own/custom buttons?**
-Because it's a limitation in VSCode, you can't modify [package.json](https://code.visualstudio.com/api/references/extension-manifest) of extension where the buttons are configured.
+Because it's a limitation in VSCode, you can't modify [package.json](https://code.visualstudio.com/api/references/extension-manifest) of extension where the buttons are configured. I wish if someone finds a workaround!
 
 **Can you add 'xyz' button for me?**  
 Sure, you can request a button by creating a github issue here https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues
-Please note that It would take some time as I am usually occupied with many things.
+Please note that it would take some time as I am usually occupied with many things.
 You can also make changes to [repo](https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/) and send me a PR to speed-up the process.
 
-**Can I contribute to repo to add my button?**  
-Yes, Please. Just go through the [repo](https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/), it's fairly simple to understand code and add a button. Send me a PR!  
+**How can I add buttons / Can I contribute to repo to add my button?**  
+Yes, Please. To add buttons see "Adding new buttons" section of help.md file.
+Go through the [repo](https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/), it's fairly simple to understand code and add a button. Send me a PR!  
 Few resources: https://code.visualstudio.com/docs/getstarted/keybindings
 https://code.visualstudio.com/docs/extensionAPI/vscode-api
 
@@ -65,6 +67,7 @@ Report Bugs/Suggest Features: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VS
 ### 1.3
 
 - fixed bug for 'opened files'
+- added undo/redo buttons
 
 ### 1.2
 

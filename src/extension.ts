@@ -40,6 +40,8 @@ export function activate(context: ExtensionContext) {
     ["extension.quickOpen", "workbench.action.quickOpen"],
     // ctrl+H behaviour
     ["extension.findReplace", "editor.action.startFindReplaceAction"],
+    ["extension.undo", "undo"],
+    ["extension.redo", "redo"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
@@ -55,7 +57,7 @@ export function activate(context: ExtensionContext) {
     );
   });
 
-  // 2) or Add complex commands separately ----------------------------------------------------
+  // 2) or Add complex commands separately (not needed if done step 1)----------------------------------------------------
 
   let disposableBeautify = commands.registerCommand(
     "extension.beautify",
@@ -101,13 +103,19 @@ export function activate(context: ExtensionContext) {
     }
   });
 
-  // Add 1) & 2) to a list of disposables which are disposed when this extension is deactivated.----------------------
-  context.subscriptions.push(disposableFileList);
-  context.subscriptions.push(disposableBeautify);
-  context.subscriptions.push(disposableSwitch);
+  // Adding 1) to a list of disposables which are disposed when this extension is deactivated.----------------------
+
   disposableCommandsArray.forEach((i) => {
     context.subscriptions.push(i);
   });
+
+  // Adding 2) to a list of disposables which are disposed when this extension is deactivated.----------------------
+
+  context.subscriptions.push(disposableFileList);
+  context.subscriptions.push(disposableBeautify);
+  context.subscriptions.push(disposableSwitch);
+
+  //also update button in package.json.. see "Adding new buttons" in help.md file
 }
 
 // this method is called when your extension is deactivated
