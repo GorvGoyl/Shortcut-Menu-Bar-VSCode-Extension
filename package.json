@@ -1,7 +1,7 @@
 {
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
-  "description": "Add buttons like beautify,list files,save etc to the editor menu bar in the Visual Studio Code.",
+  "description": "Add buttons like beautify,list files,undo,redo,save all etc to the editor menu bar in the Visual Studio Code.",
   "version": "1.3.0",
   "publisher": "jerrygoyal",
   "author": {
@@ -47,7 +47,8 @@
     "onCommand:extension.undo",
     "onCommand:extension.redo",
     "onCommand:extension.commentLine",
-    "onCommand:extension.saveAll"
+    "onCommand:extension.saveAll",
+    "onCommand:extension.formatWith"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -58,47 +59,47 @@
           "Save active file": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'save active file'"
+            "description": "show icon for 'Save file'"
           },
           "Navigate back": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'nagivate back'"
+            "description": "show icon for 'Nagivate back'"
           },
           "Navigate forward": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'nagivate forward'"
+            "description": "show icon for 'Nagivate forward'"
           },
           "Switch header source": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'switch header/source'"
+            "description": "show icon for 'Switch header/source'"
           },
           "Beautify active file": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'beautify/format active file'"
+            "description": "show icon for 'Beautify/Format document'"
           },
           "Toggle render whitespace": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'toggle render whitespace'"
+            "description": "show icon for 'Toggle render whitespace'"
           },
           "Open files list": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'open files list'"
+            "description": "show icon for 'Open files list'"
           },
           "Toggle terminal": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'toggle terminal'"
+            "description": "show icon for 'Toggle terminal'"
           },
           "Toggle activity bar": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'toggle activity bar'"
+            "description": "show icon for 'Toggle activity bar'"
           },
           "Quick open": {
             "type": "boolean",
@@ -113,22 +114,27 @@
           "Undo": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'undo'"
+            "description": "show icon for 'Undo'"
           },
           "Redo": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'redo'"
+            "description": "show icon for 'Redo'"
           },
           "Toggle line comment": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'toggle line comment'"
+            "description": "show icon for 'Toggle line comment'"
           },
           "Save all": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'save all'"
+            "description": "show icon for 'Save all'"
+          },
+          "Format document with": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Format document with...'"
           }
         }
       }
@@ -268,6 +274,15 @@
           "light": "images/saveAll_light.svg",
           "dark": "images/saveAll.svg"
         }
+      },
+      {
+        "command": "extension.formatWith",
+        "title": "Format document with..",
+        "category": "menubar",
+        "icon": {
+          "light": "images/formatWith_light.svg",
+          "dark": "images/formatWith.svg"
+        }
       }
     ],
     "menus": {
@@ -346,6 +361,11 @@
           "when": "config.Save all",
           "command": "extension.saveAll",
           "group": "navigation@15"
+        },
+        {
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.Format document with",
+          "command": "extension.formatWith",
+          "group": "navigation@16"
         }
       ]
     }

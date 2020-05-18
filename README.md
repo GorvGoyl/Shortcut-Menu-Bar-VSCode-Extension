@@ -21,7 +21,8 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 - Save active file
 - Navigate back
 - Navigate forward
-- Beautify/format code active file
+- Beautify/format document or selection
+- Beautify/format document or selection with multiple formatters
 - Undo/Redo buttons
 - Open files list
 - Save all
@@ -72,6 +73,7 @@ Report Bugs/Suggest Features: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VS
 - added undo/redo buttons
 - added Toggle line comment button
 - added save all button
+- Beautify/format document or selection with multiple formatters
 
 ### 1.2
 

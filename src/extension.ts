@@ -80,6 +80,26 @@ export function activate(context: ExtensionContext) {
     }
   );
 
+  let disposableFormatWith = commands.registerCommand(
+    "extension.formatWith",
+    () => {
+      let editor = window.activeTextEditor;
+      if (!editor) {
+        return; // No open text editor
+      }
+
+      if (window.state.focused === true && !editor.selection.isEmpty) {
+        commands
+          .executeCommand("editor.action.formatSelection.multiple")
+          .then(function () {});
+      } else {
+        commands
+          .executeCommand("editor.action.formatDocument.multiple")
+          .then(function () {});
+      }
+    }
+  );
+
   // see opened files list
   let disposableFileList = commands.registerCommand(
     "extension.filelist",
@@ -114,6 +134,7 @@ export function activate(context: ExtensionContext) {
 
   context.subscriptions.push(disposableFileList);
   context.subscriptions.push(disposableBeautify);
+  context.subscriptions.push(disposableFormatWith);
   context.subscriptions.push(disposableSwitch);
 
   //also update button in package.json.. see "Adding new buttons" in help.md file
