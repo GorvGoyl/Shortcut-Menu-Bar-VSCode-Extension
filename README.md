@@ -2,7 +2,7 @@
 
 Add buttons to editor menu bar like beautify, show opened files, save, toggle terminal, activity bar, Find replace etc to the editor menu bar in the Visual Studio Code. Make use of that empty menu bar! Increase productivity!
 
-- - -
+---
 
 ## **Screenshot** 📷
 
@@ -12,27 +12,29 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 
 ![shortcut menu bar](images/intro_2.png)
 
-- - -
+---
 
 ### **Currently Added Buttons ✅**
+
 ![shortcut menu bar](images/all_buttons.png)
-* Save active file
-* Navigate back
-* Navigate forward
-* Beautify/format code active file
-* show/hide render whitespace
-* Open files list
-* show/hide terminal
-* show/hide activity bar
-* Quick open (Ctrl+P)
-* Find & replace in active file (Ctrl+H)
-* Switch header source (for .cpp files)
+
+- Save active file
+- Navigate back
+- Navigate forward
+- Beautify/format code active file
+- show/hide render whitespace
+- Open files list
+- show/hide terminal
+- show/hide activity bar
+- Quick open (Ctrl+P)
+- Find & replace in active file (Ctrl+H)
+- Switch header source (for .cpp files)
 
 ##### Liked the extension? Rate it ⭐⭐⭐⭐⭐
 
 #### Want more buttons? see FAQ 👇
 
-- - -
+---
 
 ### FAQ 🙋‍
 
@@ -52,40 +54,44 @@ https://code.visualstudio.com/docs/extensionAPI/vscode-api
 **How can I disable/Enable a button?**  
 By going to extension settings. see above screenshot.
 
-- - -
+---
 
- Report Bugs/Suggest Features: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues
+Report Bugs/Suggest Features: https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues
 
-- - -
+---
 
 ## Release Notes
 
+### 1.3
+
+- fixed bug for 'opened files'
+
 ### 1.2
 
-* added quick open/go to file.. Ctrl+P
-* added Find/replace.. Ctrl+H
-* improved readme
+- added quick open/go to file.. Ctrl+P
+- added Find/replace.. Ctrl+H
+- improved readme
 
 ### 1.0.1
 
-* added navigate back and forward buttons
-* added switch header and source file button
-* added toggle render whitespace button
+- added navigate back and forward buttons
+- added switch header and source file button
+- added toggle render whitespace button
 
 ### 1.0.0
 
-* user can now hide/show icons in settings
-* added toggle terminal, activity bar
+- user can now hide/show icons in settings
+- added toggle terminal, activity bar
 
 ### 0.1.5
 
-* Fixed issue to properly show "opened files"
+- Fixed issue to properly show "opened files"
 
 ### 0.1.2
 
-* Initial Release
+- Initial Release
 
-- - -
+---
 
 <br>
 <br>
