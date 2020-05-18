@@ -26,7 +26,8 @@ export function activate(context: ExtensionContext) {
 
   // 1) Add simple commands to array -----------------------------------------------------------
   let commandArray = [
-    //["name in package.json" , "name of command to execute"]
+    //=> ["name in package.json" , "name of command to execute"]
+
     ["extension.save", "workbench.action.files.save"],
     ["extension.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
     [
@@ -36,12 +37,11 @@ export function activate(context: ExtensionContext) {
     ["extension.back", "workbench.action.navigateBack"],
     ["extension.forward", "workbench.action.navigateForward"],
     ["extension.toggleWhitespace", "editor.action.toggleRenderWhitespace"],
-    // ctrl+P behaviour
     ["extension.quickOpen", "workbench.action.quickOpen"],
-    // ctrl+H behaviour
     ["extension.findReplace", "editor.action.startFindReplaceAction"],
     ["extension.undo", "undo"],
     ["extension.redo", "redo"],
+    ["extension.commentLine", "editor.action.commentLine"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];

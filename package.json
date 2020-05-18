@@ -45,7 +45,8 @@
     "onCommand:extension.quickOpen",
     "onCommand:extension.findReplace",
     "onCommand:extension.undo",
-    "onCommand:extension.redo"
+    "onCommand:extension.redo",
+    "onCommand:extension.commentLine"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -117,6 +118,11 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for redo"
+          },
+          "Toggle line comment": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for toggle line comment"
           }
         }
       }
@@ -238,6 +244,15 @@
           "light": "images/redo_light.svg",
           "dark": "images/redo.svg"
         }
+      },
+      {
+        "command": "extension.commentLine",
+        "title": "Toggle line comment",
+        "category": "menubar",
+        "icon": {
+          "light": "images/commentLine_light.svg",
+          "dark": "images/commentLine.svg"
+        }
       }
     ],
     "menus": {
@@ -306,6 +321,11 @@
           "when": "textInputFocus && !editorReadonly && config.Redo",
           "command": "extension.redo",
           "group": "navigation@13"
+        },
+        {
+          "when": "editorTextFocus && !editorReadonly && config.Toggle line comment",
+          "command": "extension.commentLine",
+          "group": "navigation@14"
         }
       ]
     }
