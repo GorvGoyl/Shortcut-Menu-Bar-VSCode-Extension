@@ -1,8 +1,7 @@
 {
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
-  "description": "Add buttons like beautify,list files,save etc to the editor menu bar in the Visual Studio Code.",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Jerrygoyal"
@@ -44,8 +43,11 @@
     "onCommand:extension.toggleActivityBar",
     "onCommand:extension.quickOpen",
     "onCommand:extension.findReplace",
-    "onCommand:extension.lineComment",
-    "onCommand:extension.blockComment"
+    "onCommand:extension.undo",
+    "onCommand:extension.redo",
+    "onCommand:extension.commentLine",
+    "onCommand:extension.saveAll",
+    "onCommand:extension.formatWith"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -56,67 +58,82 @@
           "Save active file": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for save active file"
+            "description": "show icon for 'Save file'"
           },
           "Navigate back": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for nagivate back"
+            "description": "show icon for 'Nagivate back'"
           },
           "Navigate forward": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for nagivate forward"
+            "description": "show icon for 'Nagivate forward'"
           },
           "Switch header source": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for switch header/source"
+            "description": "show icon for 'Switch header/source'"
           },
           "Beautify active file": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for beautify active file"
+            "description": "show icon for 'Beautify/Format document'"
           },
           "Toggle render whitespace": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for toggle render whitespace"
+            "description": "show icon for 'Toggle render whitespace'"
           },
           "Open files list": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for open files list"
+            "description": "show icon for 'Open files list'"
           },
           "Toggle terminal": {
             "type": "boolean",
             "default": true,
-            "description": "show icon for toggle terminal"
+            "description": "show icon for 'Toggle terminal'"
           },
           "Toggle activity bar": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for toggle activity bar"
+            "description": "show icon for 'Toggle activity bar'"
           },
           "Quick open": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for Go to File, Quick Open"
+            "description": "show icon for Go to File, 'Quick Open'"
           },
           "Find replace": {
             "type": "boolean",
             "default": false,
-            "description": "show icon for Find/Replace in active file"
+            "description": "show icon for 'Find/Replace in active file'"
+          },
+          "Undo": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Undo'"
+          },
+          "Redo": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Redo'"
           },
           "Toggle line comment": {
             "type": "boolean",
-            "default": true,
-            "description": "show icon for toggle line comment"
+            "default": false,
+            "description": "show icon for 'Toggle line comment'"
           },
-          "Toggle block comment": {
+          "Save all": {
             "type": "boolean",
-            "default": true,
-            "description": "show icon for toggle block comment"
+            "default": false,
+            "description": "show icon for 'Save all'"
+          },
+          "Format document with": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Format document with...'"
           }
         }
       }
@@ -222,21 +239,48 @@
         }
       },
       {
-        "command": "extension.lineComment",
-        "title": "Toggle Line Comment",
+        "command": "extension.undo",
+        "title": "Undo",
         "category": "menubar",
         "icon": {
-          "light": "images/commentL_light.svg",
-          "dark": "images/commentL.svg"
+          "light": "images/undo_light.svg",
+          "dark": "images/undo.svg"
         }
       },
       {
-        "command": "extension.blockComment",
-        "title": "Toggle Block Comment",
+        "command": "extension.redo",
+        "title": "Redo",
         "category": "menubar",
         "icon": {
-          "light": "images/commentB_light.svg",
-          "dark": "images/commentB.svg"
+          "light": "images/redo_light.svg",
+          "dark": "images/redo.svg"
+        }
+      },
+      {
+        "command": "extension.commentLine",
+        "title": "Toggle line comment",
+        "category": "menubar",
+        "icon": {
+          "light": "images/commentLine_light.svg",
+          "dark": "images/commentLine.svg"
+        }
+      },
+      {
+        "command": "extension.saveAll",
+        "title": "Save all",
+        "category": "menubar",
+        "icon": {
+          "light": "images/saveAll_light.svg",
+          "dark": "images/saveAll.svg"
+        }
+      },
+      {
+        "command": "extension.formatWith",
+        "title": "Format document with..",
+        "category": "menubar",
+        "icon": {
+          "light": "images/formatWith_light.svg",
+          "dark": "images/formatWith.svg"
         }
       }
     ],
@@ -298,14 +342,29 @@
           "group": "navigation@11"
         },
         {
-          "when": "config.Toggle line comment",
-          "command": "extension.lineComment",
+          "when": "textInputFocus && !editorReadonly && config.Undo",
+          "command": "extension.undo",
           "group": "navigation@12"
         },
         {
-          "when": "config.Toggle block comment",
-          "command": "extension.blockComment",
+          "when": "textInputFocus && !editorReadonly && config.Redo",
+          "command": "extension.redo",
           "group": "navigation@13"
+        },
+        {
+          "when": "editorTextFocus && !editorReadonly && config.Toggle line comment",
+          "command": "extension.commentLine",
+          "group": "navigation@14"
+        },
+        {
+          "when": "config.Save all",
+          "command": "extension.saveAll",
+          "group": "navigation@15"
+        },
+        {
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.Format document with",
+          "command": "extension.formatWith",
+          "group": "navigation@16"
         }
       ]
     }
