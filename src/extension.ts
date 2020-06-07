@@ -27,7 +27,7 @@ export function activate(context: ExtensionContext) {
   // 1) Add simple commands to array -----------------------------------------------------------
   let commandArray = [
     //=> ["name in package.json" , "name of command to execute"]
-
+    
     ["extension.save", "workbench.action.files.save"],
     ["extension.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
     [
@@ -43,6 +43,7 @@ export function activate(context: ExtensionContext) {
     ["extension.redo", "redo"],
     ["extension.commentLine", "editor.action.commentLine"],
     ["extension.saveAll", "workbench.action.files.saveAll"],
+    ["extension.runBuildTask", "workbench.action.tasks.build"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
