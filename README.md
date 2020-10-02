@@ -8,7 +8,7 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 
 ![shortcut menu bar](images/intro.png)
 
-## **Enable/Disable buttons in extension settings ⚙**
+## **Enable/Disable buttons from VSCode settings ⚙**
 
 ![shortcut menu bar](images/settings.png)
 
