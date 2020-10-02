@@ -1,28 +1,34 @@
 {
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
-  "description": "Add buttons like beautify,list files,undo,redo,save all etc to the editor menu bar in the Visual Studio Code.",
-  "version": "1.3.0",
+  "description": "Add buttons like beautify,list files,undo,redo,save all etc to editor menu bar in Visual Studio Code.",
+  "version": "1.4.0",
   "publisher": "jerrygoyal",
   "author": {
-    "name": "Jerrygoyal"
+    "name": "Gourav Goyal"
   },
   "engines": {
     "vscode": "^1.22.0"
   },
+  "license": "SEE license IN LICENSE file",
   "icon": "images/menubar.png",
+  "galleryBanner": {
+    "color": "#ff6304",
+    "theme": "dark"
+  },
   "bugs": {
-    "url": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension/issues",
-    "email": "1gouravgg@gmail.com"
+    "url": "https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/issues",
+    "email": "hey@gourav.io"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension.git"
+    "url": "https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension.git"
   },
-  "homepage": "https://github.com/JerryGoyal/Shortcut-Menu-Bar-VSCode-Extension",
+  "homepage": "https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension",
   "categories": [
     "Programming Languages",
-    "Other"
+    "Other",
+    "Visualization"
   ],
   "keywords": [
     "shortcut",
