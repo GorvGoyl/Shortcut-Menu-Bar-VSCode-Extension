@@ -44,6 +44,7 @@ export function activate(context: ExtensionContext) {
     ["extension.commentLine", "editor.action.commentLine"],
     ["extension.saveAll", "workbench.action.files.saveAll"],
     ["extension.openFile", "workbench.action.files.openFile"],
+    ["extension.newFile", "workbench.action.files.newUntitledFile"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];

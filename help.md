@@ -19,8 +19,9 @@
    > inside package.json:
 2. add entry to `activationEvents`
 3. add entry to `contributes`{`configuration` (set 'default' to false)
-4. add entry to `contributes`{`commands` (add both icons dark `#C5C5C5` and light `#424242`, you can get svg icons from flaticon.com)
-5. add entry to `menus`{`/editor/title`
+4. add entry to `contributes`{`commands`
+5. add both icons dark `#C5C5C5` and light `#424242` to `images/` folder, you can get svg icons from flaticon.com)
+6. add entry to `menus`{`/editor/title`
 
 ### Explore the API
 

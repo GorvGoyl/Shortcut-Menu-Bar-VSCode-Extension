@@ -49,7 +49,8 @@
     "onCommand:extension.commentLine",
     "onCommand:extension.saveAll",
     "onCommand:extension.formatWith",
-    "onCommand:extension.openFile"
+    "onCommand:extension.openFile",
+    "onCommand:extension.newFile"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -141,6 +142,11 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Open File'"
+          },
+          "New file": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'New File'"
           }
         }
       }
@@ -298,6 +304,15 @@
           "light": "images/openFile_light.svg",
           "dark": "images/openFile.svg"
         }
+      },
+      {
+        "command": "extension.newFile",
+        "title": "New file",
+        "category": "menubar",
+        "icon": {
+          "light": "images/newFile_light.svg",
+          "dark": "images/newFile.svg"
+        }
       }
     ],
     "menus": {
@@ -386,6 +401,11 @@
           "when": "config.Open file",
           "command": "extension.openFile",
           "group": "navigation@17"
+        },
+        {
+          "when": "config.New file",
+          "command": "extension.newFile",
+          "group": "navigation@18"
         }
       ]
     }
