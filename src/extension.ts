@@ -46,6 +46,9 @@ export function activate(context: ExtensionContext) {
     ["extension.openFile", "workbench.action.files.openFile"],
     ["extension.newFile", "workbench.action.files.newUntitledFile"],
     ["extension.goToDefinition", "editor.action.revealDefinition"],
+    ["extension.cut", "editor.action.clipboardCutAction"],
+    ["extension.copy", "editor.action.clipboardCopyAction"],
+    ["extension.paste", "editor.action.clipboardPasteAction"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];

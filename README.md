@@ -33,9 +33,11 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 - Find & replace in active file (Ctrl+H)
 - Switch header source (for .cpp files)
 - Toggle line comment
-- Open file
+- Open file, New file
+- Go to definition
+- Cut, Copy, Paste
 
-##### ❤ Support the continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+##### ❤ Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
 
 ##### Liked the extension? Rate it [⭐⭐⭐⭐⭐](https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar)
 

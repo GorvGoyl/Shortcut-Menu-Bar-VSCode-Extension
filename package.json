@@ -51,7 +51,10 @@
     "onCommand:extension.formatWith",
     "onCommand:extension.openFile",
     "onCommand:extension.newFile",
-    "onCommand:extension.goToDefinition"
+    "onCommand:extension.goToDefinition",
+    "onCommand:extension.cut",
+    "onCommand:extension.copy",
+    "onCommand:extension.paste"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -153,6 +156,21 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Go to definition'"
+          },
+          "Cut": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Cut'"
+          },
+          "Copy": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Copy'"
+          },
+          "Paste": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Paste'"
           }
         }
       }
@@ -328,6 +346,33 @@
           "light": "images/goToDefinition_light.svg",
           "dark": "images/goToDefinition.svg"
         }
+      },
+      {
+        "command": "extension.cut",
+        "title": "Cut",
+        "category": "menubar",
+        "icon": {
+          "light": "images/cut_light.svg",
+          "dark": "images/cut.svg"
+        }
+      },
+      {
+        "command": "extension.copy",
+        "title": "Copy",
+        "category": "menubar",
+        "icon": {
+          "light": "images/copy_light.svg",
+          "dark": "images/copy.svg"
+        }
+      },
+      {
+        "command": "extension.paste",
+        "title": "Paste",
+        "category": "menubar",
+        "icon": {
+          "light": "images/paste_light.svg",
+          "dark": "images/paste.svg"
+        }
       }
     ],
     "menus": {
@@ -426,6 +471,21 @@
           "when": "config.Go to definition && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
           "command": "extension.goToDefinition",
           "group": "navigation@19"
+        },
+        {
+          "when": "config.Cut",
+          "command": "extension.cut",
+          "group": "navigation@20"
+        },
+        {
+          "when": "config.Copy",
+          "command": "extension.copy",
+          "group": "navigation@21"
+        },
+        {
+          "when": "config.Paste",
+          "command": "extension.paste",
+          "group": "navigation@22"
         }
       ]
     }
