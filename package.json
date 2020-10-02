@@ -50,7 +50,8 @@
     "onCommand:extension.saveAll",
     "onCommand:extension.formatWith",
     "onCommand:extension.openFile",
-    "onCommand:extension.newFile"
+    "onCommand:extension.newFile",
+    "onCommand:extension.goToDefinition"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -147,6 +148,11 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'New File'"
+          },
+          "Go to definition": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Go to definition'"
           }
         }
       }
@@ -313,6 +319,15 @@
           "light": "images/newFile_light.svg",
           "dark": "images/newFile.svg"
         }
+      },
+      {
+        "command": "extension.goToDefinition",
+        "title": "Go to definition",
+        "category": "menubar",
+        "icon": {
+          "light": "images/goToDefinition_light.svg",
+          "dark": "images/goToDefinition.svg"
+        }
       }
     ],
     "menus": {
@@ -406,6 +421,11 @@
           "when": "config.New file",
           "command": "extension.newFile",
           "group": "navigation@18"
+        },
+        {
+          "when": "config.Go to definition && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
+          "command": "extension.goToDefinition",
+          "group": "navigation@19"
         }
       ]
     }

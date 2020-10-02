@@ -45,6 +45,7 @@ export function activate(context: ExtensionContext) {
     ["extension.saveAll", "workbench.action.files.saveAll"],
     ["extension.openFile", "workbench.action.files.openFile"],
     ["extension.newFile", "workbench.action.files.newUntitledFile"],
+    ["extension.goToDefinition", "editor.action.revealDefinition"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
