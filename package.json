@@ -55,7 +55,8 @@
     "onCommand:extension.cut",
     "onCommand:extension.copy",
     "onCommand:extension.paste",
-    "onCommand:extension.compareWithSaved"
+    "onCommand:extension.compareWithSaved",
+    "onCommand:extension.showCommands"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -177,6 +178,11 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Compare active file with saved'"
+          },
+          "Open command pallet": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Open command pallet / Show all commands'"
           }
         }
       }
@@ -388,6 +394,15 @@
           "light": "images/compareWithSaved_light.svg",
           "dark": "images/compareWithSaved.svg"
         }
+      },
+      {
+        "command": "extension.showCommands",
+        "title": "Open command pallet",
+        "category": "menubar",
+        "icon": {
+          "light": "images/commands_light.svg",
+          "dark": "images/commands.svg"
+        }
       }
     ],
     "menus": {
@@ -506,6 +521,11 @@
           "when": "config.Compare with saved",
           "command": "extension.compareWithSaved",
           "group": "navigation@23"
+        },
+        {
+          "when": "config.Open command pallet",
+          "command": "extension.showCommands",
+          "group": "navigation@24"
         }
       ]
     }

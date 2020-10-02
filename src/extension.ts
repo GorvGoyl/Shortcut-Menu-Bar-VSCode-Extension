@@ -50,6 +50,7 @@ export function activate(context: ExtensionContext) {
     ["extension.copy", "editor.action.clipboardCopyAction"],
     ["extension.paste", "editor.action.clipboardPasteAction"],
     ["extension.compareWithSaved", "workbench.files.action.compareWithSaved"],
+    ["extension.showCommands", "workbench.action.showCommands"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
