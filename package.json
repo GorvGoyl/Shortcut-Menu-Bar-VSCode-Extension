@@ -54,7 +54,8 @@
     "onCommand:extension.goToDefinition",
     "onCommand:extension.cut",
     "onCommand:extension.copy",
-    "onCommand:extension.paste"
+    "onCommand:extension.paste",
+    "onCommand:extension.compareWithSaved"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -171,6 +172,11 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Paste'"
+          },
+          "Compare with saved": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Compare active file with saved'"
           }
         }
       }
@@ -373,6 +379,15 @@
           "light": "images/paste_light.svg",
           "dark": "images/paste.svg"
         }
+      },
+      {
+        "command": "extension.compareWithSaved",
+        "title": "Compare with saved",
+        "category": "menubar",
+        "icon": {
+          "light": "images/compareWithSaved_light.svg",
+          "dark": "images/compareWithSaved.svg"
+        }
       }
     ],
     "menus": {
@@ -486,6 +501,11 @@
           "when": "config.Paste",
           "command": "extension.paste",
           "group": "navigation@22"
+        },
+        {
+          "when": "config.Compare with saved",
+          "command": "extension.compareWithSaved",
+          "group": "navigation@23"
         }
       ]
     }
