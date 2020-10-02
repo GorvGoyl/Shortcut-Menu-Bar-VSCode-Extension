@@ -15,12 +15,12 @@
 
 ### Adding new buttons
 
-- add command to extension.ts
-- in package.json:
-  - add to activationEvents
-  - add to contributes/configuration (set 'default' to false)
-  - add to contributes/commands (add both icons dark #C5C5C5 and light #424242, you can get svg icons from flaticon.com)
-  - add to menus/editor/title
+1. add command to `extension.ts`
+   > inside package.json:
+2. add entry to `activationEvents`
+3. add entry to `contributes`{`configuration` (set 'default' to false)
+4. add entry to `contributes`{`commands` (add both icons dark `#C5C5C5` and light `#424242`, you can get svg icons from flaticon.com)
+5. add entry to `menus`{`/editor/title`
 
 ### Explore the API
 
@@ -58,3 +58,7 @@ https://code.visualstudio.com/api/references/extension-manifest
 - Make changes to `test/extension.test.ts` or create new test files inside the `test` folder.
   - By convention, the test runner will only consider files matching the name pattern `**.test.ts`.
   - You can create folders inside the `test` folder to structure your tests any way you want.
+
+bug in 3,12,13,14
+
+correct: 6-11,15,16

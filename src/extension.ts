@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
 
   console.log("extension is now active!");
 
-  // 1) Add simple commands to array -----------------------------------------------------------
+  // Step: If simple commands then add to this array
   let commandArray = [
     //=> ["name in package.json" , "name of command to execute"]
 
@@ -43,6 +43,7 @@ export function activate(context: ExtensionContext) {
     ["extension.redo", "redo"],
     ["extension.commentLine", "editor.action.commentLine"],
     ["extension.saveAll", "workbench.action.files.saveAll"],
+    ["extension.openFile", "workbench.action.files.openFile"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
@@ -58,7 +59,7 @@ export function activate(context: ExtensionContext) {
     );
   });
 
-  // 2) or Add complex commands separately (not needed if done step 1)----------------------------------------------------
+  // Step: else add complex command separately
 
   let disposableBeautify = commands.registerCommand(
     "extension.beautify",
@@ -124,13 +125,13 @@ export function activate(context: ExtensionContext) {
     }
   });
 
-  // Adding 1) to a list of disposables which are disposed when this extension is deactivated.----------------------
+  // Adding 1) to a list of disposables which are disposed when this extension is deactivated
 
   disposableCommandsArray.forEach((i) => {
     context.subscriptions.push(i);
   });
 
-  // Adding 2) to a list of disposables which are disposed when this extension is deactivated.----------------------
+  // Adding 2) to a list of disposables which are disposed when this extension is deactivated
 
   context.subscriptions.push(disposableFileList);
   context.subscriptions.push(disposableBeautify);

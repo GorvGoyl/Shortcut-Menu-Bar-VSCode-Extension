@@ -48,7 +48,8 @@
     "onCommand:extension.redo",
     "onCommand:extension.commentLine",
     "onCommand:extension.saveAll",
-    "onCommand:extension.formatWith"
+    "onCommand:extension.formatWith",
+    "onCommand:extension.openFile"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -135,6 +136,11 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Format document with...'"
+          },
+          "Open file": {
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Open File'"
           }
         }
       }
@@ -283,6 +289,15 @@
           "light": "images/formatWith_light.svg",
           "dark": "images/formatWith.svg"
         }
+      },
+      {
+        "command": "extension.openFile",
+        "title": "Open file",
+        "category": "menubar",
+        "icon": {
+          "light": "images/openFile_light.svg",
+          "dark": "images/openFile.svg"
+        }
       }
     ],
     "menus": {
@@ -366,6 +381,11 @@
           "when": "!isInDiffEditor && !markdownPreviewFocus && config.Format document with",
           "command": "extension.formatWith",
           "group": "navigation@16"
+        },
+        {
+          "when": "config.Open file",
+          "command": "extension.openFile",
+          "group": "navigation@17"
         }
       ]
     }

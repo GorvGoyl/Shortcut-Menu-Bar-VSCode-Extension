@@ -10,7 +10,7 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 
 ## **Enable/Disable buttons in extension settings ⚙**
 
-![shortcut menu bar](images/intro_2.png)
+![shortcut menu bar](images/settings.png)
 
 ---
 
@@ -33,8 +33,11 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 - Find & replace in active file (Ctrl+H)
 - Switch header source (for .cpp files)
 - Toggle line comment
+- Open file
 
-##### Liked the extension? Rate it ⭐⭐⭐⭐⭐
+##### ❤ Support the continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+
+##### Liked the extension? Rate it [⭐⭐⭐⭐⭐](https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar)
 
 #### Want more buttons? see FAQ 👇
 
@@ -42,7 +45,7 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 
 ### FAQ 🙋‍
 
-**Why Can't I add my own/custom buttons?**
+**Why Can't I add my own/custom buttons?**  
 Because it's a limitation in VSCode, you can't modify [package.json](https://code.visualstudio.com/api/references/extension-manifest) of extension where the buttons are configured. I wish if someone finds a workaround!
 
 **Can you add 'xyz' button for me?**  
@@ -57,7 +60,7 @@ Few resources: https://code.visualstudio.com/docs/getstarted/keybindings
 https://code.visualstudio.com/docs/extensionAPI/vscode-api
 
 **How can I disable/Enable a button?**  
-By going to extension settings. see above screenshot.
+By going to settings and search for "shortcut menu bar". see above screenshot.
 
 ---
 
