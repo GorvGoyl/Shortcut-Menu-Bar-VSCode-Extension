@@ -14,7 +14,7 @@ Add buttons to editor menu toolbar like beautify, show opened files, save, toggl
 
 ---
 
-## ✅ Currently Added Buttons
+## ✅ Currently added buttons
 
 ![shortcut menu bar](images/all_buttons.png)
 
