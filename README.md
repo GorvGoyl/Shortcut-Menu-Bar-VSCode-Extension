@@ -1,20 +1,20 @@
 # Shortcut Menu Bar VSCode Extension
 
-Add buttons to editor menu bar like beautify, show opened files, save, toggle terminal, activity bar, Find replace etc to the editor menu bar in the Visual Studio Code. Make use of that empty menu bar! Increase productivity!
+Add buttons to editor menu toolbar like beautify, show opened files, save, toggle terminal, activity bar, Find replace etc to the editor menu bar in the Visual Studio Code. Make use of that empty menu bar! Increase productivity!
 
 ---
 
-## **Screenshot** 📷
+## 📷 Screenshot
 
 ![shortcut menu bar](images/intro.png)
 
-## **Enable/Disable buttons from VSCode settings ⚙**
+## ⚙ Enable/Disable buttons from VSCode settings
 
 ![shortcut menu bar](images/settings.png)
 
 ---
 
-### **Currently Added Buttons ✅**
+## ✅ Currently Added Buttons
 
 ![shortcut menu bar](images/all_buttons.png)
 
@@ -38,9 +38,23 @@ Add buttons to editor menu bar like beautify, show opened files, save, toggle te
 - Cut, Copy, Paste
 - Start Debugging
 
-##### ❤ Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+---
 
-##### Liked the extension? Rate it [⭐⭐⭐⭐⭐](https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar)
+### ❤ Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+
+<p align="center">
+  <a href="https://ko-fi.com/gorvgoyl">
+  <img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" width="200" alt="Buy me a Coffee"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://twitter.com/intent/follow?user_id=325435736">
+  <img src="https://img.shields.io/badge/@GorvGoyl-1da1f2?style=for-the-badge&labelColor=1da1f2&color=1da1f2&logo=twitter&logoColor=white&label=Follow" alt="Follow on Twitter"/>
+  </a>
+</p>
+
+### 👍 Liked the extension? Rate it [⭐⭐⭐⭐⭐](https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar)
 
 ---
 
