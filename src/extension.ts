@@ -28,30 +28,30 @@ export function activate(context: ExtensionContext) {
   let commandArray = [
     //=> ["name in package.json" , "name of command to execute"]
 
-    ["extension.save", "workbench.action.files.save"],
-    ["extension.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
+    ["ShortcutMenuBar.save", "workbench.action.files.save"],
+    ["ShortcutMenuBar.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
     [
-      "extension.toggleActivityBar",
+      "ShortcutMenuBar.toggleActivityBar",
       "workbench.action.toggleActivityBarVisibility",
     ],
-    ["extension.back", "workbench.action.navigateBack"],
-    ["extension.forward", "workbench.action.navigateForward"],
-    ["extension.toggleWhitespace", "editor.action.toggleRenderWhitespace"],
-    ["extension.quickOpen", "workbench.action.quickOpen"],
-    ["extension.findReplace", "editor.action.startFindReplaceAction"],
-    ["extension.undo", "undo"],
-    ["extension.redo", "redo"],
-    ["extension.commentLine", "editor.action.commentLine"],
-    ["extension.saveAll", "workbench.action.files.saveAll"],
-    ["extension.openFile", "workbench.action.files.openFile"],
-    ["extension.newFile", "workbench.action.files.newUntitledFile"],
-    ["extension.goToDefinition", "editor.action.revealDefinition"],
-    ["extension.cut", "editor.action.clipboardCutAction"],
-    ["extension.copy", "editor.action.clipboardCopyAction"],
-    ["extension.paste", "editor.action.clipboardPasteAction"],
-    ["extension.compareWithSaved", "workbench.files.action.compareWithSaved"],
-    ["extension.showCommands", "workbench.action.showCommands"],
-    ["extension.startDebug", "workbench.action.debug.start"],
+    ["ShortcutMenuBar.back", "workbench.action.navigateBack"],
+    ["ShortcutMenuBar.forward", "workbench.action.navigateForward"],
+    ["ShortcutMenuBar.toggleWhitespace", "editor.action.toggleRenderWhitespace"],
+    ["ShortcutMenuBar.quickOpen", "workbench.action.quickOpen"],
+    ["ShortcutMenuBar.findReplace", "editor.action.startFindReplaceAction"],
+    ["ShortcutMenuBar.undo", "undo"],
+    ["ShortcutMenuBar.redo", "redo"],
+    ["ShortcutMenuBar.commentLine", "editor.action.commentLine"],
+    ["ShortcutMenuBar.saveAll", "workbench.action.files.saveAll"],
+    ["ShortcutMenuBar.openFile", "workbench.action.files.openFile"],
+    ["ShortcutMenuBar.newFile", "workbench.action.files.newUntitledFile"],
+    ["ShortcutMenuBar.goToDefinition", "editor.action.revealDefinition"],
+    ["ShortcutMenuBar.cut", "editor.action.clipboardCutAction"],
+    ["ShortcutMenuBar.copy", "editor.action.clipboardCopyAction"],
+    ["ShortcutMenuBar.paste", "editor.action.clipboardPasteAction"],
+    ["ShortcutMenuBar.compareWithSaved", "workbench.files.action.compareWithSaved"],
+    ["ShortcutMenuBar.showCommands", "workbench.action.showCommands"],
+    ["ShortcutMenuBar.startDebug", "workbench.action.debug.start"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
@@ -62,7 +62,7 @@ export function activate(context: ExtensionContext) {
   commandArray.forEach((command) => {
     disposableCommandsArray.push(
       commands.registerCommand(command[0], () => {
-        commands.executeCommand(command[1]).then(function () {});
+        commands.executeCommand(command[1]).then(function () { });
       })
     );
   });
@@ -70,7 +70,7 @@ export function activate(context: ExtensionContext) {
   // Step: else add complex command separately
 
   let disposableBeautify = commands.registerCommand(
-    "extension.beautify",
+    "ShortcutMenuBar.beautify",
     () => {
       let editor = window.activeTextEditor;
       if (!editor) {
@@ -80,17 +80,17 @@ export function activate(context: ExtensionContext) {
       if (window.state.focused === true && !editor.selection.isEmpty) {
         commands
           .executeCommand("editor.action.formatSelection")
-          .then(function () {});
+          .then(function () { });
       } else {
         commands
           .executeCommand("editor.action.formatDocument")
-          .then(function () {});
+          .then(function () { });
       }
     }
   );
 
   let disposableFormatWith = commands.registerCommand(
-    "extension.formatWith",
+    "ShortcutMenuBar.formatWith",
     () => {
       let editor = window.activeTextEditor;
       if (!editor) {
@@ -100,18 +100,18 @@ export function activate(context: ExtensionContext) {
       if (window.state.focused === true && !editor.selection.isEmpty) {
         commands
           .executeCommand("editor.action.formatSelection.multiple")
-          .then(function () {});
+          .then(function () { });
       } else {
         commands
           .executeCommand("editor.action.formatDocument.multiple")
-          .then(function () {});
+          .then(function () { });
       }
     }
   );
 
   // see opened files list
   let disposableFileList = commands.registerCommand(
-    "extension.filelist",
+    "ShortcutMenuBar.filelist",
     () => {
       let editor = window.activeTextEditor;
       if (!editor || !editor.viewColumn) {
@@ -119,13 +119,13 @@ export function activate(context: ExtensionContext) {
       }
       commands
         .executeCommand("workbench.action.showAllEditorsByMostRecentlyUsed")
-        .then(function () {});
+        .then(function () { });
     }
   );
 
-  let disposableSwitch = commands.registerCommand("extension.switch", () => {
+  let disposableSwitch = commands.registerCommand("ShortcutMenuBar.switch", () => {
     if (hasCpp) {
-      commands.executeCommand("C_Cpp.SwitchHeaderSource").then(function () {});
+      commands.executeCommand("C_Cpp.SwitchHeaderSource").then(function () { });
     } else {
       window.showErrorMessage(
         "C/C++ extension (ms-vscode.cpptools) is not installed!"
@@ -150,4 +150,4 @@ export function activate(context: ExtensionContext) {
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
