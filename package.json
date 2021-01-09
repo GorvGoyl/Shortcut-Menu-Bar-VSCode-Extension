@@ -634,18 +634,18 @@
     "menus": {
       "editor/title": [
         {
+          "when": "editorTextFocus && (config.Switch header source || config.ShortcutMenuBar.switchHeaderSource",
+          "command": "ShortcutMenuBar.switch",
+          "group": "navigation@1"
+        },
+        {
           "when": "config.ShortcutMenuBar.navigateBack",
           "command": "ShortcutMenuBar.back",
-          "group": "navigation@1"
+          "group": "navigation@2"
         },
         {
           "when": "config.Navigate forward || config.ShortcutMenuBar.navigateForward",
           "command": "ShortcutMenuBar.forward",
-          "group": "navigation@2"
-        },
-        {
-          "when": "editorTextFocus && (config.Switch header source || config.ShortcutMenuBar.switchHeaderSource",
-          "command": "ShortcutMenuBar.switch",
           "group": "navigation@3"
         },
         {

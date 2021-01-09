@@ -9,6 +9,7 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 ## [2.0] - 20202-01-10
 
 - Commands without namespace are deprecated. For example in `settings.json` instead of `"Quick Open": true` use `"ShortcutMenuBar.quickOpen": true`.
+- fixed navigate back and forward button alignment
 
 ## [1.5.0] - 2020-10-03
 
