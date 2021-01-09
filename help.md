@@ -40,9 +40,9 @@ https://code.visualstudio.com/api/references/extension-manifest
 
 ### How to Publish
 
-- remove warnings first
+- remove warnings if any
 - update version in package.json next to https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
-- checkin git changes
+- commit git changes
 - vsce publish
 
 <!-- - package (.vsix): vsce package -->
@@ -59,7 +59,3 @@ https://code.visualstudio.com/api/references/extension-manifest
 - Make changes to `test/extension.test.ts` or create new test files inside the `test` folder.
   - By convention, the test runner will only consider files matching the name pattern `**.test.ts`.
   - You can create folders inside the `test` folder to structure your tests any way you want.
-
-bug in 3,12,13,14
-
-correct: 6-11,15,16
