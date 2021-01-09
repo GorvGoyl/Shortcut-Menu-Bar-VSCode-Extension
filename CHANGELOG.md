@@ -6,6 +6,10 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 <!-- ## [Unreleased] -->
 
+## [2.0] - 20202-01-10
+
+- Commands without namespace are deprecated. For example in `settings.json` instead of `"Quick Open": true` use `"ShortcutMenuBar.quickOpen": true`.
+
 ## [1.5.0] - 2020-10-03
 
 - added many more buttons like cut,copy,paste,debug etc
