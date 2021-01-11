@@ -644,47 +644,47 @@
           "group": "navigation@2"
         },
         {
-          "when": "config.Navigate forward || config.ShortcutMenuBar.navigateForward",
+          "when": "config['Navigate forward'] || config.ShortcutMenuBar.navigateForward",
           "command": "ShortcutMenuBar.forward",
           "group": "navigation@3"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config.Save active file || config.ShortcutMenuBar.saveActiveFile)",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Save active file'] || config.ShortcutMenuBar.saveActiveFile)",
           "command": "ShortcutMenuBar.save",
           "group": "navigation@4"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config.Beautify active file || config.ShortcutMenuBar.beautifyActiveFile)",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Beautify active file'] || config.ShortcutMenuBar.beautifyActiveFile)",
           "command": "ShortcutMenuBar.beautify",
           "group": "navigation@5"
         },
         {
-          "when": "config.Toggle render whitespace || config.ShortcutMenuBar.toggleRenderWhiteSpace",
+          "when": "config['Toggle render whitespace'] || config.ShortcutMenuBar.toggleRenderWhiteSpace",
           "command": "ShortcutMenuBar.toggleWhitespace",
           "group": "navigation@6"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config.Open files list || config.ShortcutMenuBar.openFilesList)",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Open files list'] || config.ShortcutMenuBar.openFilesList)",
           "command": "ShortcutMenuBar.filelist",
           "group": "navigation@7"
         },
         {
-          "when": "config.Toggle terminal || config.ShortcutMenuBar.toggleTerminal",
+          "when": "config['Toggle terminal'] || config.ShortcutMenuBar.toggleTerminal",
           "command": "ShortcutMenuBar.toggleTerminal",
           "group": "navigation@8"
         },
         {
-          "when": "config.Toggle activity bar || config.ShortcutMenuBar.toggleActivity",
+          "when": "config['Toggle activity bar'] || config.ShortcutMenuBar.toggleActivity",
           "command": "ShortcutMenuBar.toggleActivityBar",
           "group": "navigation@9"
         },
         {
-          "when": "config.Quick open || config.ShortcutMenuBar.quickOpen",
+          "when": "config['Quick open'] || config.ShortcutMenuBar.quickOpen",
           "command": "ShortcutMenuBar.quickOpen",
           "group": "navigation@10"
         },
         {
-          "when": "config.Find replace || config.ShortcutMenuBar.findReplace",
+          "when": "config['Find replace'] || config.ShortcutMenuBar.findReplace",
           "command": "ShortcutMenuBar.findReplace",
           "group": "navigation@11"
         },
@@ -699,32 +699,32 @@
           "group": "navigation@13"
         },
         {
-          "when": "editorTextFocus && !editorReadonly && (config.Toggle line comment || config.ShortcutMenuBar.toggleLineComment)",
+          "when": "editorTextFocus && !editorReadonly && (config['Toggle line comment'] || config.ShortcutMenuBar.toggleLineComment)",
           "command": "ShortcutMenuBar.commentLine",
           "group": "navigation@14"
         },
         {
-          "when": "config.Save all || config.ShortcutMenuBar.saveAll",
+          "when": "config['Save all'] || config.ShortcutMenuBar.saveAll",
           "command": "ShortcutMenuBar.saveAll",
           "group": "navigation@15"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config.Format document with || config.ShortcutMenuBar.formatDocumentWith)",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Format document with'] || config.ShortcutMenuBar.formatDocumentWith)",
           "command": "ShortcutMenuBar.formatWith",
           "group": "navigation@16"
         },
         {
-          "when": "config.Open file || config.ShortcutMenuBar.openFile",
+          "when": "config['Open file'] || config.ShortcutMenuBar.openFile",
           "command": "ShortcutMenuBar.openFile",
           "group": "navigation@17"
         },
         {
-          "when": "config.New file || config.ShortcutMenuBar.newFile",
+          "when": "config['New file'] || config.ShortcutMenuBar.newFile",
           "command": "ShortcutMenuBar.newFile",
           "group": "navigation@18"
         },
         {
-          "when": "(config.Go to definition || config.ShortcutMenuBar.goToDefinition) && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
+          "when": "(config['Go to definition'] || config.ShortcutMenuBar.goToDefinition) && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
           "command": "ShortcutMenuBar.goToDefinition",
           "group": "navigation@19"
         },
@@ -744,17 +744,17 @@
           "group": "navigation@22"
         },
         {
-          "when": "config.Compare with saved || config.ShortcutMenuBar.compareWithSaved",
+          "when": "config['Compare with saved'] || config.ShortcutMenuBar.compareWithSaved",
           "command": "ShortcutMenuBar.compareWithSaved",
           "group": "navigation@23"
         },
         {
-          "when": "config.Open command pallet || config.ShortcutMenuBar.openCommandPallet",
+          "when": "config['Open command pallet'] || config.ShortcutMenuBar.openCommandPallet",
           "command": "ShortcutMenuBar.showCommands",
           "group": "navigation@24"
         },
         {
-          "when": "(config.Start debugging || config.ShortcutMenuBar.startDebugging) && debuggersAvailable && !inDebugMode",
+          "when": "(config['Start debugging'] || config.ShortcutMenuBar.startDebugging) && debuggersAvailable && !inDebugMode",
           "command": "ShortcutMenuBar.startDebug",
           "group": "navigation@25"
         }
