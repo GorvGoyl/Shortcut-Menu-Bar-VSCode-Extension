@@ -2,7 +2,7 @@
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
   "description": "Add buttons like beautify,list files,undo,redo,save all, etc to editor menu bar in VSCode.",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Gourav Goyal"
@@ -44,13 +44,13 @@
     "button"
   ],
   "activationEvents": [
-    "onCommand:ShortcutMenuBar.back",
-    "onCommand:ShortcutMenuBar.forward",
-    "onCommand:ShortcutMenuBar.switch",
+    "onCommand:ShortcutMenuBar.navigateBack",
+    "onCommand:ShortcutMenuBar.navigateForward",
+    "onCommand:ShortcutMenuBar.switchHeaderSource",
     "onCommand:ShortcutMenuBar.save",
     "onCommand:ShortcutMenuBar.beautify",
-    "onCommand:ShortcutMenuBar.toggleWhitespace",
-    "onCommand:ShortcutMenuBar.filelist",
+    "onCommand:ShortcutMenuBar.toggleRenderWhitespace",
+    "onCommand:ShortcutMenuBar.openFilesList",
     "onCommand:ShortcutMenuBar.toggleTerminal",
     "onCommand:ShortcutMenuBar.toggleActivityBar",
     "onCommand:ShortcutMenuBar.quickOpen",
@@ -68,7 +68,7 @@
     "onCommand:ShortcutMenuBar.paste",
     "onCommand:ShortcutMenuBar.compareWithSaved",
     "onCommand:ShortcutMenuBar.showCommands",
-    "onCommand:ShortcutMenuBar.startDebug"
+    "onCommand:ShortcutMenuBar.startDebugging"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -76,182 +76,7 @@
       {
         "title": "Shortcut Menu Bar configuration",
         "properties": {
-          "Save active file": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.saveActiveFile instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Save file'"
-          },
-          "Navigate back": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.navigateBack instead.",
-            "type": "boolean",
-            "default": true,
-            "readOnly": true,
-            "description": "show icon for 'Nagivate back'"
-          },
-          "Navigate forward": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.navigateForward instead.",
-            "type": "boolean",
-            "default": true,
-            "readOnly": true,
-            "description": "show icon for 'Nagivate forward'"
-          },
-          "Switch header source": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.switchHeaderSource instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Switch header/source'"
-          },
-          "Beautify active file": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.beautifyActiveFile instead.",
-            "type": "boolean",
-            "default": true,
-            "readOnly": true,
-            "description": "show icon for 'Beautify/Format document'"
-          },
-          "Toggle render whitespace": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.toggleRenderWhitespace instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Toggle render whitespace'"
-          },
-          "Open files list": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.openFilesList instead.",
-            "type": "boolean",
-            "default": true,
-            "readOnly": true,
-            "description": "show icon for 'Open files list'"
-          },
-          "Toggle terminal": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.toggleTerminal instead.",
-            "type": "boolean",
-            "default": true,
-            "readOnly": true,
-            "description": "show icon for 'Toggle terminal'"
-          },
-          "Toggle activity bar": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.toggleActivityBar instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Toggle activity bar'"
-          },
-          "Quick open": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.quickOpen instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for Go to File, 'Quick Open'"
-          },
-          "Find replace": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.findReplace instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Find/Replace in active file'"
-          },
-          "Undo": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.undo instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Undo'"
-          },
-          "Redo": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.redo instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Redo'"
-          },
-          "Toggle line comment": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.toggleLineComment instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Toggle line comment'"
-          },
-          "Save all": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.saveAll instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Save all'"
-          },
-          "Format document with": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.formatDocumentWith instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Format document with...'"
-          },
-          "Open file": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.openFile instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Open File'"
-          },
-          "New file": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.newFile instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'New File'"
-          },
-          "Go to definition": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.goToDefinition instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Go to definition'"
-          },
-          "Cut": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.cut instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Cut'"
-          },
-          "Copy": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.copy instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Copy'"
-          },
-          "Paste": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.paste instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Paste'"
-          },
-          "Compare with saved": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.compareWithSaved instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Compare active file with saved'"
-          },
-          "Open command pallet": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.openCommandPallet instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Open command pallet / Show all commands'"
-          },
-          "Start debugging": {
-            "deprecationMessage": "Deprecated! Use ShortcutMenuBar.startDebugging instead.",
-            "type": "boolean",
-            "default": false,
-            "readOnly": true,
-            "description": "show icon for 'Start debugging'"
-          },
-          "ShortcutMenuBar.saveActiveFile": {
+          "ShortcutMenuBar.save": {
             "title": "Save active file",
             "type": "boolean",
             "default": false,
@@ -275,11 +100,11 @@
             "default": false,
             "description": "show icon for 'Switch header/source'"
           },
-          "ShortcutMenuBar.beautifyActiveFile": {
-            "title": "Beautify active file",
+          "ShortcutMenuBar.beautify": {
+            "title": "Beautify selection/file",
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'Beautify/Format document'"
+            "description": "show icon for 'Beautify/Format selection or file'"
           },
           "ShortcutMenuBar.toggleRenderWhitespace": {
             "title": "Toggle render whitespace",
@@ -288,10 +113,10 @@
             "description": "show icon for 'Toggle render whitespace'"
           },
           "ShortcutMenuBar.openFilesList": {
-            "title": "Open files list",
+            "title": "show opened files list",
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'Open files list'"
+            "description": "show icon for 'Opened files list'"
           },
           "ShortcutMenuBar.toggleTerminal": {
             "title": "Toggle terminal",
@@ -317,19 +142,19 @@
             "default": false,
             "description": "show icon for 'Find/Replace in active file'"
           },
-          "ShortcutMenuBar.Undo": {
+          "ShortcutMenuBar.undo": {
             "title": "Undo",
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Undo'"
           },
-          "ShortcutMenuBar.Redo": {
+          "ShortcutMenuBar.redo": {
             "title": "Redo",
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Redo'"
           },
-          "ShortcutMenuBar.toggleLineComment": {
+          "ShortcutMenuBar.commentLine": {
             "title": "Toggle line comment",
             "type": "boolean",
             "default": false,
@@ -341,11 +166,11 @@
             "default": false,
             "description": "show icon for 'Save all'"
           },
-          "ShortcutMenuBar.formatDocumentWith": {
-            "title": "Format document with",
+          "ShortcutMenuBar.formatWith": {
+            "title": "Format selection/file with",
             "type": "boolean",
             "default": false,
-            "description": "show icon for 'Format document with...'"
+            "description": "show icon for 'Format selection/file with...'"
           },
           "ShortcutMenuBar.openFile": {
             "title": "Open file",
@@ -389,7 +214,7 @@
             "default": false,
             "description": "show icon for 'Compare active file with saved'"
           },
-          "ShortcutMenuBar.openCommandPallet": {
+          "ShortcutMenuBar.showCommands": {
             "title": "Open command pallet",
             "type": "boolean",
             "default": false,
@@ -406,8 +231,8 @@
     ],
     "commands": [
       {
-        "command": "ShortcutMenuBar.back",
-        "title": "Navigate Back",
+        "command": "ShortcutMenuBar.navigateBack",
+        "title": "Navigate back",
         "category": "ShortcutMenuBar",
         "icon": {
           "light": "images/triangle-left_light.svg",
@@ -415,8 +240,8 @@
         }
       },
       {
-        "command": "ShortcutMenuBar.forward",
-        "title": "Navigate Forward",
+        "command": "ShortcutMenuBar.navigateForward",
+        "title": "Navigate forward",
         "category": "ShortcutMenuBar",
         "icon": {
           "light": "images/triangle-right_light.svg",
@@ -424,7 +249,7 @@
         }
       },
       {
-        "command": "ShortcutMenuBar.switch",
+        "command": "ShortcutMenuBar.switchHeaderSource",
         "title": "Switch Header/Source",
         "category": "ShortcutMenuBar",
         "icon": {
@@ -451,8 +276,8 @@
         }
       },
       {
-        "command": "ShortcutMenuBar.toggleWhitespace",
-        "title": "Toggle Render Whitespace",
+        "command": "ShortcutMenuBar.toggleRenderWhitespace",
+        "title": "Toggle render whitespace",
         "category": "ShortcutMenuBar",
         "icon": {
           "light": "images/whitespace_light.svg",
@@ -460,8 +285,8 @@
         }
       },
       {
-        "command": "ShortcutMenuBar.filelist",
-        "title": "Opened Files",
+        "command": "ShortcutMenuBar.openFilesList",
+        "title": "Show opened files list",
         "category": "ShortcutMenuBar",
         "icon": {
           "light": "images/list_light.svg",
@@ -497,7 +322,7 @@
       },
       {
         "command": "ShortcutMenuBar.findReplace",
-        "title": "Find Replace",
+        "title": "Find replace",
         "category": "ShortcutMenuBar",
         "icon": {
           "light": "images/find_light.svg",
@@ -622,7 +447,7 @@
         }
       },
       {
-        "command": "ShortcutMenuBar.startDebug",
+        "command": "ShortcutMenuBar.startDebugging",
         "title": "Start debugging",
         "category": "ShortcutMenuBar",
         "icon": {
@@ -634,128 +459,128 @@
     "menus": {
       "editor/title": [
         {
-          "when": "editorTextFocus && (config.Switch header source || config.ShortcutMenuBar.switchHeaderSource",
-          "command": "ShortcutMenuBar.switch",
+          "when": "editorTextFocus && config.ShortcutMenuBar.switchHeaderSource",
+          "command": "ShortcutMenuBar.switchHeaderSource",
           "group": "navigation@1"
         },
         {
           "when": "config.ShortcutMenuBar.navigateBack",
-          "command": "ShortcutMenuBar.back",
+          "command": "ShortcutMenuBar.navigateBack",
           "group": "navigation@2"
         },
         {
-          "when": "config['Navigate forward'] || config.ShortcutMenuBar.navigateForward",
-          "command": "ShortcutMenuBar.forward",
+          "when": "config.ShortcutMenuBar.navigateForward",
+          "command": "ShortcutMenuBar.navigateForward",
           "group": "navigation@3"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Save active file'] || config.ShortcutMenuBar.saveActiveFile)",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.ShortcutMenuBar.save",
           "command": "ShortcutMenuBar.save",
           "group": "navigation@4"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Beautify active file'] || config.ShortcutMenuBar.beautifyActiveFile)",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.ShortcutMenuBar.beautify",
           "command": "ShortcutMenuBar.beautify",
           "group": "navigation@5"
         },
         {
-          "when": "config['Toggle render whitespace'] || config.ShortcutMenuBar.toggleRenderWhiteSpace",
-          "command": "ShortcutMenuBar.toggleWhitespace",
+          "when": "config.ShortcutMenuBar.toggleRenderWhitespace",
+          "command": "ShortcutMenuBar.toggleRenderWhitespace",
           "group": "navigation@6"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Open files list'] || config.ShortcutMenuBar.openFilesList)",
-          "command": "ShortcutMenuBar.filelist",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.ShortcutMenuBar.openFilesList",
+          "command": "ShortcutMenuBar.openFilesList",
           "group": "navigation@7"
         },
         {
-          "when": "config['Toggle terminal'] || config.ShortcutMenuBar.toggleTerminal",
+          "when": "config.ShortcutMenuBar.toggleTerminal",
           "command": "ShortcutMenuBar.toggleTerminal",
           "group": "navigation@8"
         },
         {
-          "when": "config['Toggle activity bar'] || config.ShortcutMenuBar.toggleActivity",
+          "when": "config.ShortcutMenuBar.toggleActivityBar",
           "command": "ShortcutMenuBar.toggleActivityBar",
           "group": "navigation@9"
         },
         {
-          "when": "config['Quick open'] || config.ShortcutMenuBar.quickOpen",
+          "when": "config.ShortcutMenuBar.quickOpen",
           "command": "ShortcutMenuBar.quickOpen",
           "group": "navigation@10"
         },
         {
-          "when": "config['Find replace'] || config.ShortcutMenuBar.findReplace",
+          "when": "config.ShortcutMenuBar.findReplace",
           "command": "ShortcutMenuBar.findReplace",
           "group": "navigation@11"
         },
         {
-          "when": "textInputFocus && !editorReadonly && (config.Undo || config.ShortcutMenuBar.undo)",
+          "when": "textInputFocus && !editorReadonly && config.ShortcutMenuBar.undo",
           "command": "ShortcutMenuBar.undo",
           "group": "navigation@12"
         },
         {
-          "when": "textInputFocus && !editorReadonly && (config.Redo || config.ShortcutMenuBar.redo)",
+          "when": "textInputFocus && !editorReadonly && config.ShortcutMenuBar.redo",
           "command": "ShortcutMenuBar.redo",
           "group": "navigation@13"
         },
         {
-          "when": "editorTextFocus && !editorReadonly && (config['Toggle line comment'] || config.ShortcutMenuBar.toggleLineComment)",
+          "when": "editorTextFocus && !editorReadonly && config.ShortcutMenuBar.commentLine",
           "command": "ShortcutMenuBar.commentLine",
           "group": "navigation@14"
         },
         {
-          "when": "config['Save all'] || config.ShortcutMenuBar.saveAll",
+          "when": "config.ShortcutMenuBar.saveAll",
           "command": "ShortcutMenuBar.saveAll",
           "group": "navigation@15"
         },
         {
-          "when": "!isInDiffEditor && !markdownPreviewFocus && (config['Format document with'] || config.ShortcutMenuBar.formatDocumentWith)",
+          "when": "!isInDiffEditor && !markdownPreviewFocus && config.ShortcutMenuBar.formatWith",
           "command": "ShortcutMenuBar.formatWith",
           "group": "navigation@16"
         },
         {
-          "when": "config['Open file'] || config.ShortcutMenuBar.openFile",
+          "when": "config.ShortcutMenuBar.openFile",
           "command": "ShortcutMenuBar.openFile",
           "group": "navigation@17"
         },
         {
-          "when": "config['New file'] || config.ShortcutMenuBar.newFile",
+          "when": "config.ShortcutMenuBar.newFile",
           "command": "ShortcutMenuBar.newFile",
           "group": "navigation@18"
         },
         {
-          "when": "(config['Go to definition'] || config.ShortcutMenuBar.goToDefinition) && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
+          "when": "config.ShortcutMenuBar.goToDefinition && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
           "command": "ShortcutMenuBar.goToDefinition",
           "group": "navigation@19"
         },
         {
-          "when": "config.Cut || config.ShortcutMenuBar.cut",
+          "when": "config.ShortcutMenuBar.cut",
           "command": "ShortcutMenuBar.cut",
           "group": "navigation@20"
         },
         {
-          "when": "config.Copy || config.ShortcutMenuBar.copy",
+          "when": "config.ShortcutMenuBar.copy",
           "command": "ShortcutMenuBar.copy",
           "group": "navigation@21"
         },
         {
-          "when": "config.Paste || config.ShortcutMenuBar.paste",
+          "when": "config.ShortcutMenuBar.paste",
           "command": "ShortcutMenuBar.paste",
           "group": "navigation@22"
         },
         {
-          "when": "config['Compare with saved'] || config.ShortcutMenuBar.compareWithSaved",
+          "when": "config.ShortcutMenuBar.compareWithSaved",
           "command": "ShortcutMenuBar.compareWithSaved",
           "group": "navigation@23"
         },
         {
-          "when": "config['Open command pallet'] || config.ShortcutMenuBar.openCommandPallet",
+          "when": "config.ShortcutMenuBar.showCommands",
           "command": "ShortcutMenuBar.showCommands",
           "group": "navigation@24"
         },
         {
-          "when": "(config['Start debugging'] || config.ShortcutMenuBar.startDebugging) && debuggersAvailable && !inDebugMode",
-          "command": "ShortcutMenuBar.startDebug",
+          "when": "config.ShortcutMenuBar.startDebugging && debuggersAvailable && !inDebugMode",
+          "command": "ShortcutMenuBar.startDebugging",
           "group": "navigation@25"
         }
       ]

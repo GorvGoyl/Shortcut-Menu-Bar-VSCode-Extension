@@ -29,14 +29,20 @@ export function activate(context: ExtensionContext) {
     //=> ["name in package.json" , "name of command to execute"]
 
     ["ShortcutMenuBar.save", "workbench.action.files.save"],
-    ["ShortcutMenuBar.toggleTerminal", "workbench.action.terminal.toggleTerminal"],
+    [
+      "ShortcutMenuBar.toggleTerminal",
+      "workbench.action.terminal.toggleTerminal",
+    ],
     [
       "ShortcutMenuBar.toggleActivityBar",
       "workbench.action.toggleActivityBarVisibility",
     ],
-    ["ShortcutMenuBar.back", "workbench.action.navigateBack"],
-    ["ShortcutMenuBar.forward", "workbench.action.navigateForward"],
-    ["ShortcutMenuBar.toggleWhitespace", "editor.action.toggleRenderWhitespace"],
+    ["ShortcutMenuBar.navigateBack", "workbench.action.navigateBack"],
+    ["ShortcutMenuBar.navigateForward", "workbench.action.navigateForward"],
+    [
+      "ShortcutMenuBar.toggleRenderWhitespace",
+      "editor.action.toggleRenderWhitespace",
+    ],
     ["ShortcutMenuBar.quickOpen", "workbench.action.quickOpen"],
     ["ShortcutMenuBar.findReplace", "editor.action.startFindReplaceAction"],
     ["ShortcutMenuBar.undo", "undo"],
@@ -49,9 +55,12 @@ export function activate(context: ExtensionContext) {
     ["ShortcutMenuBar.cut", "editor.action.clipboardCutAction"],
     ["ShortcutMenuBar.copy", "editor.action.clipboardCopyAction"],
     ["ShortcutMenuBar.paste", "editor.action.clipboardPasteAction"],
-    ["ShortcutMenuBar.compareWithSaved", "workbench.files.action.compareWithSaved"],
+    [
+      "ShortcutMenuBar.compareWithSaved",
+      "workbench.files.action.compareWithSaved",
+    ],
     ["ShortcutMenuBar.showCommands", "workbench.action.showCommands"],
-    ["ShortcutMenuBar.startDebug", "workbench.action.debug.start"],
+    ["ShortcutMenuBar.startDebugging", "workbench.action.debug.start"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
@@ -62,7 +71,7 @@ export function activate(context: ExtensionContext) {
   commandArray.forEach((command) => {
     disposableCommandsArray.push(
       commands.registerCommand(command[0], () => {
-        commands.executeCommand(command[1]).then(function () { });
+        commands.executeCommand(command[1]).then(function () {});
       })
     );
   });
@@ -80,11 +89,11 @@ export function activate(context: ExtensionContext) {
       if (window.state.focused === true && !editor.selection.isEmpty) {
         commands
           .executeCommand("editor.action.formatSelection")
-          .then(function () { });
+          .then(function () {});
       } else {
         commands
           .executeCommand("editor.action.formatDocument")
-          .then(function () { });
+          .then(function () {});
       }
     }
   );
@@ -100,18 +109,18 @@ export function activate(context: ExtensionContext) {
       if (window.state.focused === true && !editor.selection.isEmpty) {
         commands
           .executeCommand("editor.action.formatSelection.multiple")
-          .then(function () { });
+          .then(function () {});
       } else {
         commands
           .executeCommand("editor.action.formatDocument.multiple")
-          .then(function () { });
+          .then(function () {});
       }
     }
   );
 
   // see opened files list
   let disposableFileList = commands.registerCommand(
-    "ShortcutMenuBar.filelist",
+    "ShortcutMenuBar.openFilesList",
     () => {
       let editor = window.activeTextEditor;
       if (!editor || !editor.viewColumn) {
@@ -119,19 +128,24 @@ export function activate(context: ExtensionContext) {
       }
       commands
         .executeCommand("workbench.action.showAllEditorsByMostRecentlyUsed")
-        .then(function () { });
+        .then(function () {});
     }
   );
 
-  let disposableSwitch = commands.registerCommand("ShortcutMenuBar.switch", () => {
-    if (hasCpp) {
-      commands.executeCommand("C_Cpp.SwitchHeaderSource").then(function () { });
-    } else {
-      window.showErrorMessage(
-        "C/C++ extension (ms-vscode.cpptools) is not installed!"
-      );
+  let disposableSwitch = commands.registerCommand(
+    "ShortcutMenuBar.switchHeaderSource",
+    () => {
+      if (hasCpp) {
+        commands
+          .executeCommand("C_Cpp.SwitchHeaderSource")
+          .then(function () {});
+      } else {
+        window.showErrorMessage(
+          "C/C++ extension (ms-vscode.cpptools) is not installed!"
+        );
+      }
     }
-  });
+  );
 
   // Adding 1) to a list of disposables which are disposed when this extension is deactivated
 
@@ -150,4 +164,4 @@ export function activate(context: ExtensionContext) {
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() { }
+export function deactivate() {}
