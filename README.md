@@ -62,7 +62,7 @@ Add buttons to editor menu toolbar like beautify, show opened files, save, toggl
 
 ### FAQ 🙋‍
 
-**Why Can't I add my own/custom buttons?**  
+**Why can't I add my own/custom buttons?**  
 I haven't figured out a way to implement that feature. If you've found a way please raise a PR!
 
 **Can you add 'xyz' button for me?**  
@@ -71,8 +71,9 @@ Please note that it would take some time as I am usually occupied with many thin
 You can also make changes to [repo](https://github.com/gorvgoyl/Shortcut-Menu-Bar-VSCode-Extension/) and send me a PR to speed-up the process.
 
 **How can I add buttons / Can I contribute to repo to add my button?**  
-To add buttons see "Adding new buttons" section of `Help.md` file in repo.
+To add buttons see ["Adding new buttons" section of `help.md` file in repo](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/blob/master/help.md#adding-new-buttons).  
 Go through the [repo](https://github.com/gorvgoyl/Shortcut-Menu-Bar-VSCode-Extension/), it's fairly simple to understand code and add a button. Send me a PR!
+
 **How can I disable/Enable a button?**  
 By going to vscode settings (`CTRL+,` or `CMD+,`) and search for "shortcut menu bar". see above screenshot.
 
