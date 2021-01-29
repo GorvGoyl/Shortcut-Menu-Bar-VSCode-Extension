@@ -68,7 +68,8 @@
     "onCommand:ShortcutMenuBar.paste",
     "onCommand:ShortcutMenuBar.compareWithSaved",
     "onCommand:ShortcutMenuBar.showCommands",
-    "onCommand:ShortcutMenuBar.startDebugging"
+    "onCommand:ShortcutMenuBar.startDebugging",
+    "onCommand:ShortcutMenuBar.codeFold"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -225,6 +226,18 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Start debugging'"
+          },
+          "ShortcutMenuBar.codeFold": {
+            "title": "Code fold",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Code fold'"
+          },
+          "ShortcutMenuBar.codeUnfold": {
+            "title": "Code unfold",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Code unfold'"
           }
         }
       }
@@ -454,6 +467,24 @@
           "light": "images/debug_light.svg",
           "dark": "images/debug.svg"
         }
+      },
+      {
+        "command": "ShortcutMenuBar.codeFold",
+        "title": "Code fold",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/fold_light.svg",
+          "dark": "images/fold.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.codeUnfold",
+        "title": "Code unfold",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/unfold_light.svg",
+          "dark": "images/unfold.svg"
+        }
       }
     ],
     "menus": {
@@ -582,6 +613,16 @@
           "when": "config.ShortcutMenuBar.startDebugging && debuggersAvailable && !inDebugMode",
           "command": "ShortcutMenuBar.startDebugging",
           "group": "navigation@25"
+        },
+        {
+          "when": "config.ShortcutMenuBar.codeFold",
+          "command": "ShortcutMenuBar.codeFold",
+          "group": "navigation@26"
+        },
+        {
+          "when": "config.ShortcutMenuBar.codeUnfold",
+          "command": "ShortcutMenuBar.codeUnfold",
+          "group": "navigation@27"
         }
       ]
     }

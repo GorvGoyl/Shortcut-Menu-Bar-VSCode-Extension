@@ -61,6 +61,8 @@ export function activate(context: ExtensionContext) {
     ],
     ["ShortcutMenuBar.showCommands", "workbench.action.showCommands"],
     ["ShortcutMenuBar.startDebugging", "workbench.action.debug.start"],
+    ["ShortcutMenuBar.codeFold", "editor.foldAll"],
+    ["ShortcutMenuBar.codeUnfold", "editor.unfoldAll"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
