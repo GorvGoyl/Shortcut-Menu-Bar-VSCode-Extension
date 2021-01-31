@@ -36,7 +36,8 @@ Add buttons to editor menu toolbar like beautify, show opened files, save, toggl
 ✔ Open file, New file  
 ✔ Go to definition  
 ✔ Cut, Copy, Paste  
-✔ Start Debugging
+✔ Start Debugging  
+✔ User-Defined Action (1-10)
 
 ---
 
@@ -62,8 +63,10 @@ Add buttons to editor menu toolbar like beautify, show opened files, save, toggl
 
 ### FAQ 🙋‍
 
-**Why can't I add my own/custom buttons?**  
-I haven't figured out a way to implement that feature. If you've found a way please raise a PR!
+**How can I add my own/custom buttons?**  
+Setup any [vscode command](https://code.visualstudio.com/docs/getstarted/keybindings#_default-keyboard-shortcuts) or any extension command for the user defined buttons
+✔ command support arguments separated by pipe (e.g. `workbench.action.tasks.runTask|My Task`)
+✔ comma-separated list of commands that get executed sequentially
 
 **Can you add 'xyz' button for me?**  
 Sure, you can request a button by creating a github issue here https://github.com/gorvgoyl/Shortcut-Menu-Bar-VSCode-Extension/issues
