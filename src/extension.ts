@@ -1,3 +1,22 @@
+/*
+   Copyright (C) 2018-2021 Gourav Goyal and contributors.
+
+   This file is part of the Shortcut Menu Bar extension.
+
+   The Shortcut Menu Bar extension is free software: you can redistribute it
+   and/or modify it under the terms of the GNU Lesser General Public License
+   as published by the Free Software Foundation, either version 3 of the
+   License, or (at your option) any later version.
+
+   The Shortcut Menu Bar extension is distributed in the hope that it will
+   be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public License along
+   with the Shortcut Menu Bar extension. If not,see <https://www.gnu.org/licenses/>.
+*/
+
 "use strict";
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below

@@ -10,7 +10,7 @@
   "engines": {
     "vscode": "^1.52.0"
   },
-  "license": "SEE license IN LICENSE file",
+  "license": "GPL-3.0-or-later",
   "icon": "images/menubar.png",
   "galleryBanner": {
     "color": "#752d00",
