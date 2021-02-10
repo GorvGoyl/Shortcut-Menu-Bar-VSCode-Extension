@@ -6,16 +6,16 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 <!-- ## [Unreleased] -->
 
-## [2.2.0] - 20202-01-11
+## [2.2.0] - 2021-01-11
 
 - removed deprecated configs due to conflicts. if some icon is lost, please re-enable it from extension settings.
 - If there's an issue, please [report bug](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/issues)
 
-## [2.1.0] - 20202-01-11
+## [2.1.0] - 2021-01-11
 
 - fixed non working config due to invalid conditions (thanks @YPetremann for PR)
 
-## [2.0.0] - 20202-01-10
+## [2.0.0] - 2021-01-10
 
 - Commands without namespace are deprecated. For example in `settings.json` instead of `"Quick Open": true` use `"ShortcutMenuBar.quickOpen": true`. (thanks @bbugl for PR)
 - fixed navigate back and forward button alignment
