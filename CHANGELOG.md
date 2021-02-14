@@ -4,7 +4,9 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-<!-- ## [Unreleased] -->
+## [Unreleased]
+
+- added user-defined buttons.. Ctrl+Alt+1 - Ctrl+Alt+0 and settings to setup these, see README
 
 ## [2.2.0] - 2021-01-11
 
@@ -36,7 +38,7 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 - added quick open/go to file.. Ctrl+P
 - added Find/replace.. Ctrl+H
-- improved readme
+- improved README
 
 ## [1.0.1]
 
