@@ -8,7 +8,7 @@
     "name": "Gourav Goyal"
   },
   "engines": {
-    "vscode": "^1.52.0"
+    "vscode": "^1.53.0"
   },
   "license": "GPL-3.0-or-later",
   "icon": "images/menubar.png",
