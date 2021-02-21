@@ -347,7 +347,7 @@ function isMajorUpdate(previousVersion: string, currentVersion: string) {
 
 async function showWhatsNew(context: ExtensionContext) {
   try {
-    const previousVersion = context.globalState.get<string>(extensionId + "sd");
+    const previousVersion = context.globalState.get<string>(extensionId);
     const currentVersion = extensions.getExtension(extensionId)!.packageJSON
       .version;
 
