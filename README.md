@@ -51,6 +51,7 @@ You can also trigger a button by using corresponding hotkey combination (Windows
 1. Got to extension settings (`Ctrl+,` or `Cmd+,`).
 2. Look for `Shortcut Menu Bar: User Button`
 3. Add any [VSCode command](https://code.visualstudio.com/docs/getstarted/keybindings#_default-keyboard-shortcuts) or any other extension command in the input field. Button icon will be visible only when you add a command.
+
    ![Add Command](images/add-command.png)
 
 Optionally, you can also:
