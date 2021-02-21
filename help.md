@@ -45,3 +45,7 @@ https://code.visualstudio.com/api/references/extension-manifest
 - update version in package.json next to https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
 - commit git changes
 - vsce publish
+
+### Distribute outside of VSCode marketplace
+
+- vsce package
