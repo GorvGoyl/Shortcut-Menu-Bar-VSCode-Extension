@@ -1,8 +1,8 @@
 {
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
-  "description": "Add buttons like beautify,list files,undo,redo,save all, etc to editor menu bar in VSCode.",
-  "version": "2.2.0",
+  "description": "Add handy buttons like beautify, show opened files, save, toggle terminal, activity bar etc to editor menu bar. User-defined buttons are also possible.",
+  "version": "3.0.0",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Gourav Goyal"
