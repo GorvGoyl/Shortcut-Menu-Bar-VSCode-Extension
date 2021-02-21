@@ -94,4 +94,4 @@ Sure. To add buttons see ["Adding new buttons" section of `help.md` file in repo
 Go through the [repo](https://github.com/gorvgoyl/Shortcut-Menu-Bar-VSCode-Extension/), it's fairly simple to understand code and add a button. Send me a PR!
 
 **How can I disable/Enable a button?**  
-Follow above [section](#⚙-enabledisable-buttons-from-vscode-settings).
+Follow above [section](#-enabledisable-buttons-from-vscode-settings).
