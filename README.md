@@ -42,8 +42,10 @@ Go to VSCode settings (`CTRL+,` or `CMD+,`) and search for `shortcut menu bar`. 
 ## Create buttons with custom commands
 
 You can create upto 10 user-defined buttons.  
-Buttons will be shown as numbers as shown in below image.  
+Buttons will be shown as numbers as shown in below image.
+
 ![User Buttons](images/user-buttons.png)
+
 You can also trigger a button by using corresponding hotkey combination (Windows: `Ctrl+Alt+0`, `Ctrl+Alt+1`, `Ctrl+Alt+2`, etc, Mac: `Shift+Cmd+0`, `Shift+Cmd+1`, `Shift+Cmd+2`, etc)
 
 1. Got to extension settings (`Ctrl+,` or `Cmd+,`).
