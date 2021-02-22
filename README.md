@@ -3,6 +3,7 @@
 Add handy buttons like beautify, show opened files, save, toggle terminal, activity bar, Find replace etc to the editor menu bar in VSCode. You can also create your own buttons with custom commands.
 
 #### [See on VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar)
+#### [See on Open-VSX](https://open-vsx.org/extension/jerrygoyal/shortcut-menu-bar)
 
 ## 📷 Screenshot
 

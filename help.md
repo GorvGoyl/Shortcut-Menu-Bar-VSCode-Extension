@@ -46,6 +46,7 @@ https://code.visualstudio.com/api/references/extension-manifest
 - commit git changes
 - `vsce publish`
 - prepate git tag release (add binary by running `vsce package`)
+- check status: https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
 
 ### Publish on open-vsx
 
