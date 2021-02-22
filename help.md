@@ -38,14 +38,16 @@ https://code.visualstudio.com/api/references/extension-manifest
 - https://code.visualstudio.com/docs/extensions/publish-extension
 - npm install -g vsce
 
-### How to Publish
+### Publish on VSCode
 
+- update version in package.json next to https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
 - `npm run lint`
 - remove warnings if any
-- update version in package.json next to https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
 - commit git changes
-- vsce publish
+- `vsce publish`
+- prepate git tag release (add binary by running `vsce package`)
 
-### Distribute outside of VSCode marketplace
+### Publish on open-vsx
 
-- vsce package
+- `npx ovsx publish -p <token>`
+- check status: https://open-vsx.org/extension/jerrygoyal/shortcut-menu-bar
