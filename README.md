@@ -83,6 +83,12 @@ Optionally, you can also:
 
 ### 👍 Liked the extension? Express your love by rating it [⭐⭐⭐⭐⭐](https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar) (clickable stars)
 
+<br>
+
+<p align="center" >
+<a href="https://www.producthunt.com/posts/shortcut-menu-bar-for-vscode?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-shortcut-menu-bar-for-vscode" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=285741&theme=light" alt="Shortcut Menu Bar for VSCode - Add handy buttons to editor toolbar in VSCode | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+</p>
+
 ---
 
 ### FAQ 🙋‍
