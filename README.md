@@ -69,7 +69,7 @@ Optionally, you can also:
 
 <p align="center">
   <a href="https://ko-fi.com/gorvgoyl">
-  <img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" width="200" alt="Buy me a Coffee"/>
+  <img src="https://github.com/GorvGoyl/Notion-Boost-browser-extension/raw/master/src/images/readme/bmc.png" width="200" alt="Buy me a Coffee"/>
   </a>
 </p>
 
