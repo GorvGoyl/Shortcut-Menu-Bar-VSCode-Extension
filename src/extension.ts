@@ -95,6 +95,10 @@ export function activate(context: ExtensionContext) {
     ],
     ["ShortcutMenuBar.showCommands", "workbench.action.showCommands"],
     ["ShortcutMenuBar.startDebugging", "workbench.action.debug.start"],
+
+    ["ShortcutMenuBar.indentLines", "editor.action.indentLines"],
+    ["ShortcutMenuBar.outdentLines", "editor.action.outdentLines"],
+    ["ShortcutMenuBar.openSettings", "workbench.action.openSettings"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
