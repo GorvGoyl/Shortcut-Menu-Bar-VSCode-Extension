@@ -2,7 +2,7 @@
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
   "description": "Add handy buttons like beautify, show opened files, save, toggle terminal, activity bar etc to editor menu bar. User-defined buttons are also possible.",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Gourav Goyal"
@@ -942,7 +942,9 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
-    "publish": "vsce publish"
+    "login": "vsce login jerrygoyal",
+    "publish": "vsce publish",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",

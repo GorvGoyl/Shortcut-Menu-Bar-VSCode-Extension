@@ -50,8 +50,9 @@ https://code.visualstudio.com/api/references/extension-manifest
 - `npm run lint`
 - remove warnings if any
 - commit git changes
-- `vsce publish`
-- prepate git tag release (add binary by running `vsce package`)
+- `npm run publish`
+- In case of PAT expire error, run `npm run login` and mention new token (take from https://jerrygoyal.visualstudio.com/_usersSettings/tokens ,set **Organization: all accessible organizations** and **Scopes: Full access**)
+- prepate git tag release (add binary by running `npm run package`)
 - check status: https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
 
 ### Publish on open-vsx

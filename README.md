@@ -1,4 +1,4 @@
-![shortcut menu bar](images/1.png)
+![shortcut menu bar](images/1.jpg)
 
 # Shortcut Menu Bar - VSCode Extension
 
@@ -18,7 +18,7 @@ Add 35+ handy buttons like beautify, show opened files, save, toggle terminal, a
 
 Go to VSCode settings (`CTRL+,` or `CMD+,`) and search for `shortcut menu bar`. Toggle buttons from there.
 
-![shortcut menu bar](images/settings.png)
+![shortcut menu bar](images/settings.jpg)
 
 ## ✅ Currently added buttons
 
@@ -58,7 +58,7 @@ You can also trigger a button by using corresponding hotkey combination (Windows
 2. Look for `Shortcut Menu Bar: User Button`
 3. Add any [VSCode command](https://code.visualstudio.com/docs/getstarted/keybindings#_default-keyboard-shortcuts) or any other extension command in the input field. Button icon will be visible only when you add a command.
 
-   ![Add Command](images/add-command.png)
+   ![Add Command](images/add-command.jpg)
 
 Optionally, you can also:
 
