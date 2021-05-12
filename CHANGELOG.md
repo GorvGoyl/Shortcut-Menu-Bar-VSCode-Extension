@@ -4,6 +4,11 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## [3.0.2] - 2021-03-20
+
+- added indent/outdent buttons
+- added open settings button
+
 ## [3.0.1] - 2021-02-22
 
 - [Much awaited feature] you can finally create user-defined buttons. See [README](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension#create-buttons-with-custom-commands) for instruction. Huge thanks to [@GitMensch](https://github.com/GitMensch) for this contribution.

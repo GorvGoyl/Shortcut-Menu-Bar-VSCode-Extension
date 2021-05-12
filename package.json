@@ -2,7 +2,7 @@
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
   "description": "Add handy buttons like beautify, show opened files, save, toggle terminal, activity bar etc to editor menu bar. User-defined buttons are also possible.",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Gourav Goyal"
@@ -69,6 +69,9 @@
     "onCommand:ShortcutMenuBar.compareWithSaved",
     "onCommand:ShortcutMenuBar.showCommands",
     "onCommand:ShortcutMenuBar.startDebugging",
+    "onCommand:ShortcutMenuBar.indentLines",
+    "onCommand:ShortcutMenuBar.outdentLines",
+    "onCommand:ShortcutMenuBar.openSettings",
     "onCommand:ShortcutMenuBar.userButton10",
     "onCommand:ShortcutMenuBar.userButton01",
     "onCommand:ShortcutMenuBar.userButton02",
@@ -235,6 +238,24 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Start debugging'"
+          },
+          "ShortcutMenuBar.indentLines": {
+            "title": "Indent lines",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Indent Lines'"
+          },
+          "ShortcutMenuBar.outdentLines": {
+            "title": "Outdent lines",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Outdent Lines'"
+          },
+          "ShortcutMenuBar.openSettings": {
+            "title": "Open settings",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Open settings'"
           },
           "ShortcutMenuBar.userButton01Command": {
             "title": "command",
@@ -526,6 +547,33 @@
         }
       },
       {
+        "command": "ShortcutMenuBar.indentLines",
+        "title": "Indent lines",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/indentLines_light.svg",
+          "dark": "images/indentLines.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.outdentLines",
+        "title": "Outdent lines",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/outdentLines_light.svg",
+          "dark": "images/outdentLines.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.openSettings",
+        "title": "open settings",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/openSettings_light.svg",
+          "dark": "images/openSettings.svg"
+        }
+      },
+      {
         "command": "ShortcutMenuBar.userButton01",
         "title": "user action 1",
         "category": "ShortcutMenuBar",
@@ -796,54 +844,69 @@
           "group": "navigation@25"
         },
         {
+          "when": "config.ShortcutMenuBar.indentLines",
+          "command": "ShortcutMenuBar.indentLines",
+          "group": "navigation@26"
+        },
+        {
+          "when": "config.ShortcutMenuBar.outdentLines",
+          "command": "ShortcutMenuBar.outdentLines",
+          "group": "navigation@27"
+        },
+        {
+          "when": "config.ShortcutMenuBar.openSettings",
+          "command": "ShortcutMenuBar.openSettings",
+          "group": "navigation@28"
+        },
+        {
           "when": "config.ShortcutMenuBar.userButton01Command",
           "command": "ShortcutMenuBar.userButton01",
-          "group": "navigation@26"
+          "group": "navigation@29"
         },
         {
           "when": "config.ShortcutMenuBar.userButton02Command",
           "command": "ShortcutMenuBar.userButton02",
-          "group": "navigation@27"
+          "group": "navigation@30"
         },
         {
           "when": "config.ShortcutMenuBar.userButton03Command",
           "command": "ShortcutMenuBar.userButton03",
-          "group": "navigation@28"
+          "group": "navigation@31"
         },
         {
           "when": "config.ShortcutMenuBar.userButton04Command",
           "command": "ShortcutMenuBar.userButton04",
-          "group": "navigation@29"
+          "group": "navigation@32"
         },
         {
           "when": "config.ShortcutMenuBar.userButton05Command",
           "command": "ShortcutMenuBar.userButton05",
-          "group": "navigation@30"
+          "group": "navigation@33"
         },
         {
           "when": "config.ShortcutMenuBar.userButton06Command",
           "command": "ShortcutMenuBar.userButton06",
-          "group": "navigation@31"
+          "group": "navigation@34"
         },
         {
           "when": "config.ShortcutMenuBar.userButton07Command",
           "command": "ShortcutMenuBar.userButton07",
-          "group": "navigation@32"
+          "group": "navigation@35"
         },
         {
           "when": "config.ShortcutMenuBar.userButton08Command",
           "command": "ShortcutMenuBar.userButton08",
-          "group": "navigation@33"
+          "group": "navigation@36"
         },
         {
           "when": "config.ShortcutMenuBar.userButton09Command",
           "command": "ShortcutMenuBar.userButton09",
-          "group": "navigation@34"
+          "group": "navigation@37"
         },
         {
           "when": "config.ShortcutMenuBar.userButton10Command",
           "command": "ShortcutMenuBar.userButton10",
-          "group": "navigation@35"
+          "group": "navigation@38"
         }
       ]
     }
