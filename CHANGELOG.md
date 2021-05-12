@@ -4,11 +4,12 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## [3.0.2] - 2021-03-20
+## [3.0.2] - 2021-05-12
 
 - fixed icons not showing properly
 - added indent/outdent buttons
 - added open settings button
+- added Toggle word wrap button
 
 ## [3.0.1] - 2021-02-22
 

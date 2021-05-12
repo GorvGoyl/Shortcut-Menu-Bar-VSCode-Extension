@@ -15,16 +15,22 @@
 
 ### Adding new buttons
 
-1. add command to `extension.ts`
-   > inside package.json:
-2. add entry to `activationEvents`
-3. add entry to `contributes`{`configuration` (set 'default' to false)
-4. add entry to `contributes`{`commands`
-5. add both icons dark `#C5C5C5` and light `#424242` to `images/` folder, you can get svg icons from flaticon.com)
-6. add entry to `menus`{`editor/title`
+1. Add both icons i.e dark `#C5C5C5` and light `#424242` to `images/` folder. Set SVG dimensions: `width="16"`, `height="16"` and, `viewBox` (see exisiting icons to get idea). You can get free svg icons from flaticon.com
+
+2. add command to `src\extension.ts`
+
+3. inside `package.json`:
+
+   1. add entry to `activationEvents`
+   2. add entry to `contributes`{`configuration` (set 'default' to false)
+   3. add icons path to `contributes`{`commands`
+   4. add entry to `menus`{`editor/title`
+
+4. Test (`F5` to run in Debug mode). Make sure both icons (light, dark) are showing properly and command is working fine.
 
 ### Explore the API
 
+https://code.visualstudio.com/api/references/contribution-points#Command-icon-specifications
 https://code.visualstudio.com/docs/getstarted/keybindings
 https://code.visualstudio.com/docs/extensionAPI/vscode-api
 https://code.visualstudio.com/api/references/contribution-points#contributes.menus

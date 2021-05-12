@@ -72,6 +72,7 @@
     "onCommand:ShortcutMenuBar.indentLines",
     "onCommand:ShortcutMenuBar.outdentLines",
     "onCommand:ShortcutMenuBar.openSettings",
+    "onCommand:ShortcutMenuBar.toggleWordWrap",
     "onCommand:ShortcutMenuBar.userButton10",
     "onCommand:ShortcutMenuBar.userButton01",
     "onCommand:ShortcutMenuBar.userButton02",
@@ -256,6 +257,12 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Open settings'"
+          },
+          "ShortcutMenuBar.toggleWordWrap": {
+            "title": "Toggle word wrap",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Toggle word wrap'"
           },
           "ShortcutMenuBar.userButton01Command": {
             "title": "command",
@@ -574,6 +581,15 @@
         }
       },
       {
+        "command": "ShortcutMenuBar.toggleWordWrap",
+        "title": "Toggle word wrap",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/wordWrap_light.svg",
+          "dark": "images/wordWrap.svg"
+        }
+      },
+      {
         "command": "ShortcutMenuBar.userButton01",
         "title": "user action 1",
         "category": "ShortcutMenuBar",
@@ -859,54 +875,64 @@
           "group": "navigation@28"
         },
         {
+          "when": "config.ShortcutMenuBar.openSettings",
+          "command": "ShortcutMenuBar.openSettings",
+          "group": "navigation@28"
+        },
+        {
+          "when": "config.ShortcutMenuBar.toggleWordWrap",
+          "command": "ShortcutMenuBar.toggleWordWrap",
+          "group": "navigation@29"
+        },
+        {
           "when": "config.ShortcutMenuBar.userButton01Command",
           "command": "ShortcutMenuBar.userButton01",
-          "group": "navigation@29"
+          "group": "navigation@30"
         },
         {
           "when": "config.ShortcutMenuBar.userButton02Command",
           "command": "ShortcutMenuBar.userButton02",
-          "group": "navigation@30"
+          "group": "navigation@31"
         },
         {
           "when": "config.ShortcutMenuBar.userButton03Command",
           "command": "ShortcutMenuBar.userButton03",
-          "group": "navigation@31"
+          "group": "navigation@32"
         },
         {
           "when": "config.ShortcutMenuBar.userButton04Command",
           "command": "ShortcutMenuBar.userButton04",
-          "group": "navigation@32"
+          "group": "navigation@33"
         },
         {
           "when": "config.ShortcutMenuBar.userButton05Command",
           "command": "ShortcutMenuBar.userButton05",
-          "group": "navigation@33"
+          "group": "navigation@34"
         },
         {
           "when": "config.ShortcutMenuBar.userButton06Command",
           "command": "ShortcutMenuBar.userButton06",
-          "group": "navigation@34"
+          "group": "navigation@35"
         },
         {
           "when": "config.ShortcutMenuBar.userButton07Command",
           "command": "ShortcutMenuBar.userButton07",
-          "group": "navigation@35"
+          "group": "navigation@36"
         },
         {
           "when": "config.ShortcutMenuBar.userButton08Command",
           "command": "ShortcutMenuBar.userButton08",
-          "group": "navigation@36"
+          "group": "navigation@37"
         },
         {
           "when": "config.ShortcutMenuBar.userButton09Command",
           "command": "ShortcutMenuBar.userButton09",
-          "group": "navigation@37"
+          "group": "navigation@38"
         },
         {
           "when": "config.ShortcutMenuBar.userButton10Command",
           "command": "ShortcutMenuBar.userButton10",
-          "group": "navigation@38"
+          "group": "navigation@39"
         }
       ]
     }

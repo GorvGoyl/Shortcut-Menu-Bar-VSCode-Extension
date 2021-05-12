@@ -99,6 +99,7 @@ export function activate(context: ExtensionContext) {
     ["ShortcutMenuBar.indentLines", "editor.action.indentLines"],
     ["ShortcutMenuBar.outdentLines", "editor.action.outdentLines"],
     ["ShortcutMenuBar.openSettings", "workbench.action.openSettings"],
+    ["ShortcutMenuBar.toggleWordWrap", "editor.action.toggleWordWrap"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
@@ -352,8 +353,8 @@ function isMajorUpdate(previousVersion: string, currentVersion: string) {
 async function showWhatsNew(context: ExtensionContext) {
   try {
     const previousVersion = context.globalState.get<string>(extensionId);
-    const currentVersion = extensions.getExtension(extensionId)!.packageJSON
-      .version;
+    const currentVersion =
+      extensions.getExtension(extensionId)!.packageJSON.version;
 
     // store latest version
     context.globalState.update(extensionId, currentVersion);
