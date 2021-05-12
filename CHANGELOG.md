@@ -6,6 +6,7 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 ## [3.0.2] - 2021-03-20
 
+- fixed icons not showing properly
 - added indent/outdent buttons
 - added open settings button
 
