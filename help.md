@@ -57,10 +57,10 @@ https://code.visualstudio.com/api/references/extension-manifest
       - get from https://jerrygoyal.visualstudio.com/_usersSettings/tokens
         - set **Organization: all accessible organizations** and **Scopes: Full access**
 - check status: https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
-- prepate git tag release https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/releases/new
+- prepare git tag release https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/releases/new
   - get binary by running `npm run package`
 
 ### Publish on open-vsx
 
-- `npx ovsx publish -p <token>`
+- `npx ovsx publish shortcut-menu-bar-3.0.X.vsix -p <token>`
 - check status: https://open-vsx.org/extension/jerrygoyal/shortcut-menu-bar
