@@ -51,9 +51,14 @@ https://code.visualstudio.com/api/references/extension-manifest
 - remove warnings if any
 - commit git changes
 - `npm run publish`
-- In case of PAT expire error, run `npm run login` and mention new token (take from https://jerrygoyal.visualstudio.com/_usersSettings/tokens ,set **Organization: all accessible organizations** and **Scopes: Full access**)
-- prepate git tag release (add binary by running `npm run package`)
+  - In case of PAT expire error
+    - run `npm run login`
+    - mention new token
+      - get from https://jerrygoyal.visualstudio.com/_usersSettings/tokens
+        - set **Organization: all accessible organizations** and **Scopes: Full access**
 - check status: https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
+- prepate git tag release https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/releases/new
+  - get binary by running `npm run package`
 
 ### Publish on open-vsx
 

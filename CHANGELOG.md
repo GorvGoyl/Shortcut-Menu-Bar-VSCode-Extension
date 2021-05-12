@@ -4,7 +4,7 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## [3.0.2] - 2021-05-12
+## [3.0.3] - 2021-05-12
 
 - fixed icons not showing properly
 - added indent/outdent buttons
