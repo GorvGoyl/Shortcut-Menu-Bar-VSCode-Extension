@@ -100,6 +100,8 @@ export function activate(context: ExtensionContext) {
     ["ShortcutMenuBar.outdentLines", "editor.action.outdentLines"],
     ["ShortcutMenuBar.openSettings", "workbench.action.openSettings"],
     ["ShortcutMenuBar.toggleWordWrap", "editor.action.toggleWordWrap"],
+		["ShortcutMenuBar.changeEncoding", "workbench.action.editor.changeEncoding"],
+		["ShortcutMenuBar.powershellRestartSession", "PowerShell.RestartSession"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
