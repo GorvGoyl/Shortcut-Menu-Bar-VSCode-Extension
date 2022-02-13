@@ -52,6 +52,8 @@ Buttons will be shown as numbers as shown in below image.
 
 ![User Buttons](images/user-buttons.png)
 
+> Note: To add custom icons for commands, see this [hack](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/issues/58#issuecomment-918663851).
+
 You can also trigger a button by using corresponding hotkey combination (Windows: `Ctrl+Alt+0`, `Ctrl+Alt+1`, `Ctrl+Alt+2`, etc, Mac: `Shift+Cmd+0`, `Shift+Cmd+1`, `Shift+Cmd+2`, etc)
 
 1. Got to extension settings (`Ctrl+,` or `Cmd+,`).
