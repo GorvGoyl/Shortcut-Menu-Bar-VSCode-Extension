@@ -22,17 +22,17 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 // let fs = require("fs");
+import { basename, dirname, extname } from "path";
 import {
+  commands,
+  Disposable,
+  env,
+  ExtensionContext,
+  extensions,
+  Uri,
   window,
   workspace,
-  commands,
-  ExtensionContext,
-  Disposable,
-  extensions,
-  env,
-  Uri,
 } from "vscode";
-import { basename, dirname, extname } from "path";
 
 var init = false;
 var hasCpp = false;
@@ -100,8 +100,11 @@ export function activate(context: ExtensionContext) {
     ["ShortcutMenuBar.outdentLines", "editor.action.outdentLines"],
     ["ShortcutMenuBar.openSettings", "workbench.action.openSettings"],
     ["ShortcutMenuBar.toggleWordWrap", "editor.action.toggleWordWrap"],
-		["ShortcutMenuBar.changeEncoding", "workbench.action.editor.changeEncoding"],
-		["ShortcutMenuBar.powershellRestartSession", "PowerShell.RestartSession"],
+    [
+      "ShortcutMenuBar.changeEncoding",
+      "workbench.action.editor.changeEncoding",
+    ],
+    ["ShortcutMenuBar.powershellRestartSession", "PowerShell.RestartSession"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
@@ -252,13 +255,13 @@ function executeNext(action: String, palettes: String[], index: number) {
           executeNext(action, palettes, index);
         }
       },
-      (err) => {
+      (err: any) => {
         window.showErrorMessage(
           `Execution of '${action}' command has failed: ${err.message}`
         );
       }
     );
-  } catch (err) {
+  } catch (err: any) {
     window.showErrorMessage(
       `Execution of '${action}' command has failed: ${err.message}`
     );

@@ -907,11 +907,6 @@
           "group": "navigation@28"
         },
         {
-          "when": "config.ShortcutMenuBar.openSettings",
-          "command": "ShortcutMenuBar.openSettings",
-          "group": "navigation@28"
-        },
-        {
           "when": "config.ShortcutMenuBar.toggleWordWrap",
           "command": "ShortcutMenuBar.toggleWordWrap",
           "group": "navigation@29"
