@@ -73,6 +73,8 @@
     "onCommand:ShortcutMenuBar.outdentLines",
     "onCommand:ShortcutMenuBar.openSettings",
     "onCommand:ShortcutMenuBar.toggleWordWrap",
+    "onCommand:ShortcutMenuBar.changeEncoding",
+    "onCommand:ShortcutMenuBar.powershellRestartSession",
     "onCommand:ShortcutMenuBar.userButton10",
     "onCommand:ShortcutMenuBar.userButton01",
     "onCommand:ShortcutMenuBar.userButton02",
@@ -263,6 +265,18 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Toggle word wrap'"
+          },
+          "ShortcutMenuBar.changeEncoding": {
+            "title": "Change file encoding",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Change file encoding'"
+          },
+          "ShortcutMenuBar.powershellRestartSession": {
+            "title": "Restart PowerShell session",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Restart PowerShell session'"
           },
           "ShortcutMenuBar.userButton01Command": {
             "title": "command",
@@ -590,6 +604,24 @@
         }
       },
       {
+        "command": "ShortcutMenuBar.changeEncoding",
+        "title": "Change file encoding",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/changeEncoding_light.svg",
+          "dark": "images/changeEncoding.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.powershellRestartSession",
+        "title": "Restart PowerShell session",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/powershellrestart_light.svg",
+          "dark": "images/powershellrestart.svg"
+        }
+      },
+      {
         "command": "ShortcutMenuBar.userButton01",
         "title": "user action 1",
         "category": "ShortcutMenuBar",
@@ -875,14 +907,19 @@
           "group": "navigation@28"
         },
         {
-          "when": "config.ShortcutMenuBar.openSettings",
-          "command": "ShortcutMenuBar.openSettings",
-          "group": "navigation@28"
-        },
-        {
           "when": "config.ShortcutMenuBar.toggleWordWrap",
           "command": "ShortcutMenuBar.toggleWordWrap",
           "group": "navigation@29"
+        },
+        {
+          "when": "config.ShortcutMenuBar.changeEncoding",
+          "command": "ShortcutMenuBar.changeEncoding",
+          "group": "navigation@30"
+        },
+        {
+          "when": "config.ShortcutMenuBar.powershellRestartSession",
+          "command": "ShortcutMenuBar.powershellRestartSession",
+          "group": "navigation@31"
         },
         {
           "when": "config.ShortcutMenuBar.userButton01Command",
@@ -947,14 +984,14 @@
     "package": "vsce package"
   },
   "devDependencies": {
-    "@types/glob": "^7.2.0",
-    "@types/node": "^17.0.17",
-    "@types/vscode": "^1.64.0",
-    "@typescript-eslint/eslint-plugin": "^5.11.0",
-    "@typescript-eslint/parser": "^5.11.0",
-    "eslint": "^8.9.0",
-    "glob": "^7.2.0",
-    "typescript": "^4.5.5",
-    "vsce": "^2.6.7"
+    "@types/glob": "^7.1.3",
+    "@types/node": "^15.0.2",
+    "@types/vscode": "^1.56.0",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "eslint": "^7.26.0",
+    "glob": "^7.1.7",
+    "typescript": "^4.2.4",
+    "vsce": "^1.88.0"
   }
 }
