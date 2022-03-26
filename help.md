@@ -39,12 +39,12 @@ https://code.visualstudio.com/api/references/extension-manifest
 
 - You can open the full set of our API when you open the file `node_modules/vscode/vscode.d.ts`.
 
-### Publishing tools setup
+### Publish on VSCode
+
+Publishing tools setup
 
 - https://code.visualstudio.com/docs/extensions/publish-extension
 - npm install -g vsce
-
-### Publish on VSCode
 
 - update version in package.json next to https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
 - `npm run lint`
@@ -55,12 +55,20 @@ https://code.visualstudio.com/api/references/extension-manifest
     - run `npm run login`
     - mention new token
       - get from https://jerrygoyal.visualstudio.com/_usersSettings/tokens
-        - set **Organization: all accessible organizations** and **Scopes: Full access**
+        - create one if it's expired
+          - name: vscode
+          - Organisation: all accessible organizations
+          - Scopes: Full access
 - check status: https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar
-- prepare git tag release https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/releases/new
-  - get binary by running `npm run package`
+
+add to Github release
+
+- get binary by running `npm run package`
+- submit https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/releases
 
 ### Publish on open-vsx
+
+Get token from https://open-vsx.org/user-settings/tokens
 
 - `npx ovsx publish shortcut-menu-bar-3.0.X.vsix -p <token>`
 - check status: https://open-vsx.org/extension/jerrygoyal/shortcut-menu-bar

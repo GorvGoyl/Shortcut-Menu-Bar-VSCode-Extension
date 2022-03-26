@@ -2,13 +2,13 @@
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
   "description": "Add handy buttons like beautify, show opened files, save, toggle terminal, activity bar etc to editor menu bar. User-defined buttons are also possible.",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Gourav Goyal"
   },
   "engines": {
-    "vscode": "^1.56.0"
+    "vscode": "^1.65.0"
   },
   "license": "GPL-3.0-or-later",
   "icon": "images/menubar.png",
@@ -985,13 +985,13 @@
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
-    "@types/node": "^17.0.17",
-    "@types/vscode": "^1.64.0",
-    "@typescript-eslint/eslint-plugin": "^5.11.0",
-    "@typescript-eslint/parser": "^5.11.0",
-    "eslint": "^8.9.0",
+    "@types/node": "^17.0.23",
+    "@types/vscode": "^1.65.0",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.12.0",
     "glob": "^7.2.0",
-    "typescript": "^4.5.5",
-    "vsce": "^2.6.7"
+    "typescript": "^4.6.3",
+    "vsce": "^2.7.0"
   }
 }
