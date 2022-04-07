@@ -346,19 +346,15 @@
         "command": "ShortcutMenuBar.navigateBack",
         "title": "Navigate back",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/triangle-left_light.svg",
-          "dark": "images/triangle-left.svg"
-        }
+        "icon": "$(goto-previous-location)",
+        "//icon": "$(triangle-left)"
       },
       {
         "command": "ShortcutMenuBar.navigateForward",
         "title": "Navigate forward",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/triangle-right_light.svg",
-          "dark": "images/triangle-right.svg"
-        }
+        "icon": "$(goto-next-location)",
+        "//icon": "$(triangle-right)"
       },
       {
         "command": "ShortcutMenuBar.switchHeaderSource",
@@ -367,52 +363,43 @@
         "icon": {
           "light": "images/switch_light.svg",
           "dark": "images/switch.svg"
-        }
+        },
+        "//icon": "$(references)",
+        "///icon": "$(goto-file)",
+        "////icon": "$(chrome-restore)",
+        "/////icon": "$(symbol-value)"
       },
       {
         "command": "ShortcutMenuBar.save",
         "title": "Save",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/save_light.svg",
-          "dark": "images/save.svg"
-        }
+        "icon": "$(save)"
       },
       {
         "command": "ShortcutMenuBar.beautify",
         "title": "Beautify",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/format_light.svg",
-          "dark": "images/format.svg"
-        }
+        "icon": "$(json)",
+        "//icon": "$(code)"
       },
       {
         "command": "ShortcutMenuBar.toggleRenderWhitespace",
         "title": "Toggle render whitespace",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/whitespace_light.svg",
-          "dark": "images/whitespace.svg"
-        }
+        "icon": "$(whitespace)"
       },
       {
         "command": "ShortcutMenuBar.openFilesList",
         "title": "Show opened files list",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/list_light.svg",
-          "dark": "images/list.svg"
-        }
+        "icon": "$(list-unordered)",
+        "//icon": "$(list)"
       },
       {
         "command": "ShortcutMenuBar.toggleTerminal",
         "title": "Toggle terminal",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/terminal_light.svg",
-          "dark": "images/terminal.svg"
-        }
+        "icon": "$(terminal)"
       },
       {
         "command": "ShortcutMenuBar.toggleActivityBar",
@@ -430,7 +417,9 @@
         "icon": {
           "light": "images/files-search_light.svg",
           "dark": "images/files-search.svg"
-        }
+        },
+        "//icon": "$(file-submodule)",
+        "///icon": "$(search)"
       },
       {
         "command": "ShortcutMenuBar.findReplace",
@@ -439,25 +428,20 @@
         "icon": {
           "light": "images/find_light.svg",
           "dark": "images/find.svg"
-        }
+        },
+        "//icon": "$(find-replace)"
       },
       {
         "command": "ShortcutMenuBar.undo",
         "title": "Undo",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/undo_light.svg",
-          "dark": "images/undo.svg"
-        }
+        "icon": "$(notebook-revert)"
       },
       {
         "command": "ShortcutMenuBar.redo",
         "title": "Redo",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/redo_light.svg",
-          "dark": "images/redo.svg"
-        }
+        "icon": "$(redo)"
       },
       {
         "command": "ShortcutMenuBar.commentLine",
@@ -472,10 +456,7 @@
         "command": "ShortcutMenuBar.saveAll",
         "title": "Save all",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/saveAll_light.svg",
-          "dark": "images/saveAll.svg"
-        }
+        "icon": "$(save-all)"
       },
       {
         "command": "ShortcutMenuBar.formatWith",
@@ -490,19 +471,13 @@
         "command": "ShortcutMenuBar.openFile",
         "title": "Open file",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/openFile_light.svg",
-          "dark": "images/openFile.svg"
-        }
+        "icon": "$(folder-opened)"
       },
       {
         "command": "ShortcutMenuBar.newFile",
         "title": "New file",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/newFile_light.svg",
-          "dark": "images/newFile.svg"
-        }
+        "icon": "$(new-file)"
       },
       {
         "command": "ShortcutMenuBar.goToDefinition",
@@ -511,7 +486,8 @@
         "icon": {
           "light": "images/goToDefinition_light.svg",
           "dark": "images/goToDefinition.svg"
-        }
+        },
+        "//icon": "$(symbol-misc)"
       },
       {
         "command": "ShortcutMenuBar.cut",
@@ -544,7 +520,8 @@
         "command": "ShortcutMenuBar.compareWithSaved",
         "title": "Compare with saved",
         "category": "ShortcutMenuBar",
-        "icon": {
+        "icon": "$(diff)",
+        "//icon": {
           "light": "images/compareWithSaved_light.svg",
           "dark": "images/compareWithSaved.svg"
         }
@@ -556,16 +533,14 @@
         "icon": {
           "light": "images/commands_light.svg",
           "dark": "images/commands.svg"
-        }
+        },
+        "//icon": "$(tools)"
       },
       {
         "command": "ShortcutMenuBar.startDebugging",
         "title": "Start debugging",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/debug_light.svg",
-          "dark": "images/debug.svg"
-        }
+        "icon": "$(debug-alt)"
       },
       {
         "command": "ShortcutMenuBar.indentLines",
@@ -589,19 +564,13 @@
         "command": "ShortcutMenuBar.openSettings",
         "title": "open settings",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/openSettings_light.svg",
-          "dark": "images/openSettings.svg"
-        }
+        "icon": "$(preferences-open-settings)"
       },
       {
         "command": "ShortcutMenuBar.toggleWordWrap",
         "title": "Toggle word wrap",
         "category": "ShortcutMenuBar",
-        "icon": {
-          "light": "images/wordWrap_light.svg",
-          "dark": "images/wordWrap.svg"
-        }
+        "icon": "$(word-wrap)"
       },
       {
         "command": "ShortcutMenuBar.changeEncoding",
