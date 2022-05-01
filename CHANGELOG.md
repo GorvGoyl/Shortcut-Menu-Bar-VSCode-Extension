@@ -4,18 +4,29 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-<!-- ## [Unreleased] -->
+## [3.0.3] - 2021-05-12
 
-## [2.2.0] - 20202-01-11
+- fixed icons not showing properly
+- added indent/outdent buttons
+- added open settings button
+- added Toggle word wrap button
+
+## [3.0.1] - 2021-02-22
+
+- [Much awaited feature] you can finally create user-defined buttons. See [README](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension#create-buttons-with-custom-commands) for instruction. Huge thanks to [@GitMensch](https://github.com/GitMensch) for this contribution.
+- If there's a bug, please [report it on Github](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/issues).
+
+Please support this project. [Buy me a Coffee](https://ko-fi.com/gorvgoyl).
+
+## [2.2.0] - 2021-01-11
 
 - removed deprecated configs due to conflicts. if some icon is lost, please re-enable it from extension settings.
-- If there's an issue, please [report bug](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension/issues)
 
-## [2.1.0] - 20202-01-11
+## [2.1.0] - 2021-01-11
 
 - fixed non working config due to invalid conditions (thanks @YPetremann for PR)
 
-## [2.0.0] - 20202-01-10
+## [2.0.0] - 2021-01-10
 
 - Commands without namespace are deprecated. For example in `settings.json` instead of `"Quick Open": true` use `"ShortcutMenuBar.quickOpen": true`. (thanks @bbugl for PR)
 - fixed navigate back and forward button alignment
@@ -36,7 +47,7 @@ All notable changes to the "Shortcut-Menu-Bar" extension will be documented in t
 
 - added quick open/go to file.. Ctrl+P
 - added Find/replace.. Ctrl+H
-- improved readme
+- improved README
 
 ## [1.0.1]
 

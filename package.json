@@ -1,16 +1,16 @@
 {
   "name": "shortcut-menu-bar",
   "displayName": "Shortcut Menu Bar",
-  "description": "Add buttons like beautify,list files,undo,redo,save all, etc to editor menu bar in VSCode.",
-  "version": "2.2.0",
+  "description": "Add handy buttons like beautify, show opened files, save, toggle terminal, activity bar etc to editor menu bar. User-defined buttons are also possible.",
+  "version": "3.0.4",
   "publisher": "jerrygoyal",
   "author": {
     "name": "Gourav Goyal"
   },
   "engines": {
-    "vscode": "^1.52.0"
+    "vscode": "^1.65.0"
   },
-  "license": "SEE license IN LICENSE file",
+  "license": "GPL-3.0-or-later",
   "icon": "images/menubar.png",
   "galleryBanner": {
     "color": "#752d00",
@@ -69,7 +69,24 @@
     "onCommand:ShortcutMenuBar.compareWithSaved",
     "onCommand:ShortcutMenuBar.showCommands",
     "onCommand:ShortcutMenuBar.startDebugging",
-    "onCommand:ShortcutMenuBar.codeFold"
+    "onCommand:ShortcutMenuBar.indentLines",
+    "onCommand:ShortcutMenuBar.outdentLines",
+    "onCommand:ShortcutMenuBar.openSettings",
+    "onCommand:ShortcutMenuBar.toggleWordWrap",
+    "onCommand:ShortcutMenuBar.changeEncoding",
+    "onCommand:ShortcutMenuBar.powershellRestartSession",
+    "onCommand:ShortcutMenuBar.userButton10",
+    "onCommand:ShortcutMenuBar.userButton01",
+    "onCommand:ShortcutMenuBar.userButton02",
+    "onCommand:ShortcutMenuBar.userButton03",
+    "onCommand:ShortcutMenuBar.userButton04",
+    "onCommand:ShortcutMenuBar.userButton05",
+    "onCommand:ShortcutMenuBar.userButton06",
+    "onCommand:ShortcutMenuBar.userButton07",
+    "onCommand:ShortcutMenuBar.userButton08",
+    "onCommand:ShortcutMenuBar.userButton09",
+    "onCommand:ShortcutMenuBar.codeFold",
+    "onCommand:ShortcutMenuBar.codeUnfold"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -87,13 +104,13 @@
             "title": "Navigate back",
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'Nagivate back'"
+            "description": "show icon for 'Navigate back'"
           },
           "ShortcutMenuBar.navigateForward": {
             "title": "Navigate forward",
             "type": "boolean",
             "default": true,
-            "description": "show icon for 'Nagivate forward'"
+            "description": "show icon for 'Navigate forward'"
           },
           "ShortcutMenuBar.switchHeaderSource": {
             "title": "Switch header source",
@@ -238,6 +255,102 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Code unfold'"
+          },
+          "ShortcutMenuBar.indentLines": {
+            "title": "Indent lines",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Indent Lines'"
+          },
+          "ShortcutMenuBar.outdentLines": {
+            "title": "Outdent lines",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Outdent Lines'"
+          },
+          "ShortcutMenuBar.openSettings": {
+            "title": "Open settings",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Open settings'"
+          },
+          "ShortcutMenuBar.toggleWordWrap": {
+            "title": "Toggle word wrap",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Toggle word wrap'"
+          },
+          "ShortcutMenuBar.changeEncoding": {
+            "title": "Change file encoding",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Change file encoding'"
+          },
+          "ShortcutMenuBar.powershellRestartSession": {
+            "title": "Restart PowerShell session",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Restart PowerShell session'"
+          },
+          "ShortcutMenuBar.userButton01Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 1'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton02Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 2'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton03Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 3'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton04Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 4'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton05Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 5'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton06Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 6'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton07Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 7'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton08Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 8'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton09Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 9'; _icon is shown if set_"
+          },
+          "ShortcutMenuBar.userButton10Command": {
+            "title": "command",
+            "type": "string",
+            "default": null,
+            "markdownDescription": "command executed with 'user action 0'; _icon is shown if set_"
           }
         }
       }
@@ -485,6 +598,202 @@
           "light": "images/unfold_light.svg",
           "dark": "images/unfold.svg"
         }
+      },
+      {
+        "command": "ShortcutMenuBar.indentLines",
+        "title": "Indent lines",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/indentLines_light.svg",
+          "dark": "images/indentLines.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.outdentLines",
+        "title": "Outdent lines",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/outdentLines_light.svg",
+          "dark": "images/outdentLines.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.openSettings",
+        "title": "open settings",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/openSettings_light.svg",
+          "dark": "images/openSettings.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.toggleWordWrap",
+        "title": "Toggle word wrap",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/wordWrap_light.svg",
+          "dark": "images/wordWrap.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.changeEncoding",
+        "title": "Change file encoding",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/changeEncoding_light.svg",
+          "dark": "images/changeEncoding.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.powershellRestartSession",
+        "title": "Restart PowerShell session",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/powershellrestart_light.svg",
+          "dark": "images/powershellrestart.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton01",
+        "title": "user action 1",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton01_light.svg",
+          "dark": "images/userButton01.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton02",
+        "title": "user action 2",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton02_light.svg",
+          "dark": "images/userButton02.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton03",
+        "title": "user action 3",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton03_light.svg",
+          "dark": "images/userButton03.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton04",
+        "title": "user action 4",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton04_light.svg",
+          "dark": "images/userButton04.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton05",
+        "title": "user action 5",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton05_light.svg",
+          "dark": "images/userButton05.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton06",
+        "title": "user action 6",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton06_light.svg",
+          "dark": "images/userButton06.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton07",
+        "title": "user action 7",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton07_light.svg",
+          "dark": "images/userButton07.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton08",
+        "title": "user action 8",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton08_light.svg",
+          "dark": "images/userButton08.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton09",
+        "title": "user action 9",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton09_light.svg",
+          "dark": "images/userButton09.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.userButton10",
+        "title": "user action 0",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/userButton10_light.svg",
+          "dark": "images/userButton10.svg"
+        }
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "ShortcutMenuBar.userButton01",
+        "key": "ctrl+alt+1",
+        "mac": "shift+cmd+1"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton02",
+        "key": "ctrl+alt+2",
+        "mac": "shift+cmd+2"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton03",
+        "key": "ctrl+alt+3",
+        "mac": "shift+cmd+3"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton04",
+        "key": "ctrl+alt+4",
+        "mac": "shift+cmd+4"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton05",
+        "key": "ctrl+alt+5",
+        "mac": "shift+cmd+5"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton06",
+        "key": "ctrl+alt+6",
+        "mac": "shift+cmd+6"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton07",
+        "key": "ctrl+alt+7",
+        "mac": "shift+cmd+7"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton08",
+        "key": "ctrl+alt+8",
+        "mac": "shift+cmd+8"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton09",
+        "key": "ctrl+alt+9",
+        "mac": "shift+cmd+9"
+      },
+      {
+        "command": "ShortcutMenuBar.userButton10",
+        "key": "ctrl+alt+0",
+        "mac": "shift+cmd+0"
       }
     ],
     "menus": {
@@ -615,14 +924,94 @@
           "group": "navigation@25"
         },
         {
+          "when": "config.ShortcutMenuBar.indentLines",
+          "command": "ShortcutMenuBar.indentLines",
+          "group": "navigation@26"
+        },
+        {
+          "when": "config.ShortcutMenuBar.outdentLines",
+          "command": "ShortcutMenuBar.outdentLines",
+          "group": "navigation@27"
+        },
+        {
+          "when": "config.ShortcutMenuBar.openSettings",
+          "command": "ShortcutMenuBar.openSettings",
+          "group": "navigation@28"
+        },
+        {
+          "when": "config.ShortcutMenuBar.toggleWordWrap",
+          "command": "ShortcutMenuBar.toggleWordWrap",
+          "group": "navigation@29"
+        },
+        {
+          "when": "config.ShortcutMenuBar.changeEncoding",
+          "command": "ShortcutMenuBar.changeEncoding",
+          "group": "navigation@30"
+        },
+        {
+          "when": "config.ShortcutMenuBar.powershellRestartSession",
+          "command": "ShortcutMenuBar.powershellRestartSession",
+          "group": "navigation@31"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton01Command",
+          "command": "ShortcutMenuBar.userButton01",
+          "group": "navigation@30"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton02Command",
+          "command": "ShortcutMenuBar.userButton02",
+          "group": "navigation@31"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton03Command",
+          "command": "ShortcutMenuBar.userButton03",
+          "group": "navigation@32"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton04Command",
+          "command": "ShortcutMenuBar.userButton04",
+          "group": "navigation@33"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton05Command",
+          "command": "ShortcutMenuBar.userButton05",
+          "group": "navigation@34"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton06Command",
+          "command": "ShortcutMenuBar.userButton06",
+          "group": "navigation@35"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton07Command",
+          "command": "ShortcutMenuBar.userButton07",
+          "group": "navigation@36"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton08Command",
+          "command": "ShortcutMenuBar.userButton08",
+          "group": "navigation@37"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton09Command",
+          "command": "ShortcutMenuBar.userButton09",
+          "group": "navigation@38"
+        },
+        {
+          "when": "config.ShortcutMenuBar.userButton10Command",
+          "command": "ShortcutMenuBar.userButton10",
+          "group": "navigation@39"
+        },
+        {
           "when": "config.ShortcutMenuBar.codeFold",
           "command": "ShortcutMenuBar.codeFold",
-          "group": "navigation@26"
+          "group": "navigation@40"
         },
         {
           "when": "config.ShortcutMenuBar.codeUnfold",
           "command": "ShortcutMenuBar.codeUnfold",
-          "group": "navigation@27"
+          "group": "navigation@41"
         }
       ]
     }
@@ -631,19 +1020,20 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "lint": "eslint src --ext ts"
+    "lint": "eslint src --ext ts",
+    "login": "vsce login jerrygoyal",
+    "publish": "vsce publish",
+    "package": "vsce package"
   },
   "devDependencies": {
-    "typescript": "^4.1.3",
-    "@types/vscode": "^1.52.0",
-    "@types/glob": "^7.1.3",
-    "@types/mocha": "^8.0.4",
-    "@types/node": "^12.11.7",
-    "eslint": "^7.15.0",
-    "@typescript-eslint/eslint-plugin": "^4.9.0",
-    "@typescript-eslint/parser": "^4.9.0",
-    "glob": "^7.1.6",
-    "mocha": "^8.1.3",
-    "vscode-test": "^1.4.1"
+    "@types/glob": "^7.2.0",
+    "@types/node": "^17.0.23",
+    "@types/vscode": "^1.65.0",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.12.0",
+    "glob": "^7.2.0",
+    "typescript": "^4.6.3",
+    "vsce": "^2.7.0"
   }
 }
