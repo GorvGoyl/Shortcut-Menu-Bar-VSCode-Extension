@@ -96,9 +96,6 @@ export function activate(context: ExtensionContext) {
     ["ShortcutMenuBar.showCommands", "workbench.action.showCommands"],
     ["ShortcutMenuBar.startDebugging", "workbench.action.debug.start"],
 
-    ["ShortcutMenuBar.codeFold", "editor.foldAll"],
-    ["ShortcutMenuBar.codeUnfold", "editor.unfoldAll"],
-
     ["ShortcutMenuBar.indentLines", "editor.action.indentLines"],
     ["ShortcutMenuBar.outdentLines", "editor.action.outdentLines"],
     ["ShortcutMenuBar.openSettings", "workbench.action.openSettings"],
@@ -108,6 +105,11 @@ export function activate(context: ExtensionContext) {
       "workbench.action.editor.changeEncoding",
     ],
     ["ShortcutMenuBar.powershellRestartSession", "PowerShell.RestartSession"],
+
+    ["ShortcutMenuBar.codeFold", "editor.foldAll"],
+    ["ShortcutMenuBar.codeUnfold", "editor.unfoldAll"],
+
+    ["ShortcutMenuBar.plantUmlPreview", "plantuml.preview"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
