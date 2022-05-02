@@ -84,7 +84,10 @@
     "onCommand:ShortcutMenuBar.userButton06",
     "onCommand:ShortcutMenuBar.userButton07",
     "onCommand:ShortcutMenuBar.userButton08",
-    "onCommand:ShortcutMenuBar.userButton09"
+    "onCommand:ShortcutMenuBar.userButton09",
+    "onCommand:ShortcutMenuBar.codeFold",
+    "onCommand:ShortcutMenuBar.codeUnfold",
+    "onCommand:ShortcutMenuBar.plantUmlPreview"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -277,6 +280,24 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Restart PowerShell session'"
+          },
+          "ShortcutMenuBar.codeFold": {
+            "title": "Code fold",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Code fold'"
+          },
+          "ShortcutMenuBar.codeUnfold": {
+            "title": "Code unfold",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Code unfold'"
+          },
+          "ShortcutMenuBar.plantUmlPreview": {
+            "title": "PlantUML Preview",
+            "type": "boolean",
+            "default": false,
+            "description": "preview current diagram"
           },
           "ShortcutMenuBar.userButton01Command": {
             "title": "command",
@@ -619,6 +640,33 @@
         "icon": {
           "light": "images/powershellrestart_light.svg",
           "dark": "images/powershellrestart.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.codeFold",
+        "title": "Code fold",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/fold_light.svg",
+          "dark": "images/fold.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.codeUnfold",
+        "title": "Code unfold",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/unfold_light.svg",
+          "dark": "images/unfold.svg"
+        }
+      },
+      {
+        "command": "ShortcutMenuBar.plantUmlPreview",
+        "title": "PlantUML Preview",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/plantUmlPreview_light.svg",
+          "dark": "images/plantUmlPreview.svg"
         }
       },
       {
@@ -970,6 +1018,21 @@
           "when": "config.ShortcutMenuBar.userButton10Command",
           "command": "ShortcutMenuBar.userButton10",
           "group": "navigation@39"
+        },
+        {
+          "when": "config.ShortcutMenuBar.codeFold",
+          "command": "ShortcutMenuBar.codeFold",
+          "group": "navigation@40"
+        },
+        {
+          "when": "config.ShortcutMenuBar.codeUnfold",
+          "command": "ShortcutMenuBar.codeUnfold",
+          "group": "navigation@41"
+        },
+        {
+          "when": "config.ShortcutMenuBar.plantUmlPreview && resourceExtname =~ /^.wsd$|^.pu$|^.puml$|^.plantuml$|^.iuml$/",
+          "command": "ShortcutMenuBar.plantUmlPreview",
+          "group": "navigation@42"
         }
       ]
     }
@@ -985,7 +1048,7 @@
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
-    "@types/node": "^17.0.23",
+    "@types/node": "^17.0.30",
     "@types/vscode": "^1.65.0",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
