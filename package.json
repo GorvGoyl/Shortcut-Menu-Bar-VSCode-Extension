@@ -75,6 +75,7 @@
     "onCommand:ShortcutMenuBar.toggleWordWrap",
     "onCommand:ShortcutMenuBar.changeEncoding",
     "onCommand:ShortcutMenuBar.powershellRestartSession",
+    "onCommand:ShortcutMenuBar.toggleMaximizeEditorGroup",
     "onCommand:ShortcutMenuBar.userButton10",
     "onCommand:ShortcutMenuBar.userButton01",
     "onCommand:ShortcutMenuBar.userButton02",
@@ -277,6 +278,12 @@
             "type": "boolean",
             "default": false,
             "description": "show icon for 'Restart PowerShell session'"
+          },
+          "ShortcutMenuBar.toggleMaximizeEditorGroup": {
+            "title": "Toggle Maximize Editor Group",
+            "type": "boolean",
+            "default": false,
+            "description": "show icon for 'Toggle Maximize Editor Group'"
           },
           "ShortcutMenuBar.userButton01Command": {
             "title": "command",
@@ -622,6 +629,15 @@
         }
       },
       {
+        "command": "ShortcutMenuBar.toggleMaximizeEditorGroup",
+        "title": "Toggle Maximize Editor Group",
+        "category": "ShortcutMenuBar",
+        "icon": {
+          "light": "images/toggleMaximizeEditorGroup_light.svg",
+          "dark": "images/toggleMaximizeEditorGroup.svg"
+        }
+      },
+      {
         "command": "ShortcutMenuBar.userButton01",
         "title": "user action 1",
         "category": "ShortcutMenuBar",
@@ -920,6 +936,11 @@
           "when": "config.ShortcutMenuBar.powershellRestartSession",
           "command": "ShortcutMenuBar.powershellRestartSession",
           "group": "navigation@31"
+        },
+        {
+          "when": "config.ShortcutMenuBar.toggleMaximizeEditorGroup && multipleEditorGroups && !maximizedEditorGroup",
+          "command": "ShortcutMenuBar.toggleMaximizeEditorGroup",
+          "group": "navigation@-10"
         },
         {
           "when": "config.ShortcutMenuBar.userButton01Command",
