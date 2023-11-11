@@ -105,6 +105,7 @@ export function activate(context: ExtensionContext) {
       "workbench.action.editor.changeEncoding",
     ],
     ["ShortcutMenuBar.powershellRestartSession", "PowerShell.RestartSession"],
+    ["ShortcutMenuBar.toggleMaximizeEditorGroup","workbench.action.toggleMaximizeEditorGroup"],
   ];
 
   let disposableCommandsArray: Disposable[] = [];
