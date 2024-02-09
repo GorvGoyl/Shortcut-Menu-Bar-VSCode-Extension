@@ -21,8 +21,8 @@
 
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-// let fs = require("fs");
-import { basename, dirname, extname } from "path";
+import fs = require("fs");
+import { basename, dirname, extname, join } from "path";
 import {
   commands,
   Disposable,
@@ -205,34 +205,117 @@ export function activate(context: ExtensionContext) {
   context.subscriptions.push(disposableSwitch);
 
   // Adding 3 // user defined userButtons
-  for (let index = 1; index <= 10; index++) {
-    const printIndex = index !== 10 ? "0" + index : "" + index;
-    let action = "userButton" + printIndex;
-    let actionName = "ShortcutMenuBar." + action;
-    let disposableUserButtonCommand = commands.registerCommand(
-      actionName,
-      () => {
-        const config = workspace.getConfiguration("ShortcutMenuBar");
-        let configName = action + "Command";
-        const command = config.get<String>(configName);
+  let registerUserCommand = (command: string, action: String) => {
+    let disposableUserButtonCommand = commands.registerCommand(command, () => {
+      const config = workspace.getConfiguration("ShortcutMenuBar");
+      let command = config.get<String>(action + "Command");
 
-        // skip userButtons not set
-        if (
-          command === null ||
-          command === undefined ||
-          command.trimEnd() === ""
-        ) {
-          return;
-        }
-
-        const palettes = command.split(",");
-        executeNext(action, palettes, 0);
+      // skip userButtons not set
+      if (
+        command === null ||
+        command === undefined ||
+        command.trimEnd() === ""
+      ) {
+        window.showWarningMessage(
+          `ShortcutMenuBar: User button ${action.replace(
+            "userButton",
+            ""
+          )} is not assigned`
+        );
+        return;
       }
-    );
-    context.subscriptions.push(disposableUserButtonCommand);
-  }
 
-  //also update userButton in package.json.. see "Adding new userButtons" in help.md file
+      let matches = /(\$\([\w-]+\))(.*)/g.exec(command.toString());
+      if (matches !== null) {
+        command = new String(matches[2]);
+      }
+
+      const palettes = command.split(",");
+      executeNext(action, palettes, 0);
+    });
+    context.subscriptions.push(disposableUserButtonCommand);
+  };
+
+  enum RegisterUserCommands {
+    Yes,
+    No,
+  }
+  enum ReloadWindow {
+    Yes,
+    No,
+  }
+  let updateCommands = (
+    registerCommands: RegisterUserCommands,
+    reloadWindow: ReloadWindow
+  ) => {
+    let configPath = join(context.extensionPath, "package.json");
+    fs.readFile(configPath, "utf8", (err, data) => {
+      if (!err) {
+        const ext_config = JSON.parse(data);
+        if (
+          ext_config.contributes !== undefined &&
+          ext_config.contributes !== null &&
+          ext_config.contributes.commands !== undefined &&
+          ext_config.contributes.commands !== null
+        ) {
+          let needPatchExtension = false;
+          const config = workspace.getConfiguration("ShortcutMenuBar");
+          ext_config.contributes.commands.forEach((item) => {
+            if (item.command === undefined || item.command === null) {
+              return;
+            }
+            if (item.command.startsWith("ShortcutMenuBar.userButton")) {
+              const action = item.command.replace("ShortcutMenuBar.", "");
+              const command = config.get<String>(action + "Command");
+
+              if (registerCommands == RegisterUserCommands.Yes)
+                registerUserCommand(item.command, action);
+
+              // skip userButtons not set
+              if (
+                command === null ||
+                command === undefined ||
+                command.trimEnd() === ""
+              ) {
+                return;
+              }
+
+              let matches = /(\$\([\w-]+\))(.*)/g.exec(command.toString());
+              if (matches === null) {
+                return;
+              }
+
+              needPatchExtension = item.icon !== matches[1];
+              item.icon = matches[1];
+            }
+          });
+
+          if (needPatchExtension) {
+            const config = JSON.stringify(ext_config, null, 2);
+            fs.writeFile(configPath, config, "utf8", (err) => {
+              if (!err) {
+                if (reloadWindow == ReloadWindow.Yes)
+                  commands.executeCommand("workbench.action.reloadWindow");
+                else
+                  window.showInformationMessage(
+                    "You need restart VSCode to update toolbar icons"
+                  );
+              }
+            });
+          }
+        }
+      }
+    });
+  };
+
+  updateCommands(RegisterUserCommands.Yes, ReloadWindow.Yes);
+
+  let configWatcher = workspace.onDidChangeConfiguration((event) => {
+    if (event.affectsConfiguration("ShortcutMenuBar")) {
+      updateCommands(RegisterUserCommands.No, ReloadWindow.No);
+    }
+  });
+  context.subscriptions.push(configWatcher);
 }
 
 // this method is called when your extension is deactivated
